@@ -50,12 +50,12 @@ class User extends Authenticatable
 
     public function gameHistory()
     {
-        return $this->belongsToMany(Board::class, 'game_history')->withPivot('score');
+        return $this->belongsToMany(User::class, 'game_history', 'user_id', 'board_id')->withPivot('score');
     }
 
     public function wishlist()
     {
-        return $this->belongsToMany(Board::class, 'wishlists');
+        return $this->belongsToMany(Board::class, 'wishlist');
     }
 
 }

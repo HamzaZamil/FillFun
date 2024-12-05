@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('game_history', function (Blueprint $table) {
+        Schema::create('game_histories', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
