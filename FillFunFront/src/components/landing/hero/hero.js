@@ -26,7 +26,7 @@ function Hero() {
                         <p>Dive into a world of trivia surprises!</p>
                         <div className="d-flex">
                             {/* CTA Buttons */}
-                            <a href="#about" className="btn-get-started">
+                            <a href="/boards" className="btn-get-started">
                                 Get Started
                             </a>
 
