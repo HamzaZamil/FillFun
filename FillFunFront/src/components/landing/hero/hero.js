@@ -1,14 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
-import "../../assets/vendor/glightbox/css/glightbox.css";
-import GLightbox from "glightbox";
-import HeroImage from "../../assets/img/hero-bg-2.jpg";
-import Hero2 from "../../assets/img/hero-img.png";
+
+import HeroImage from "../../../assets/img/hero-bg-2.jpg";
+import Hero2 from "../../../assets/img/header.webp";
+
 
 function Hero() {
-    useEffect(() => {
-        GLightbox({ selector: ".glightbox" });
-    }, []);
+
 
     return (
         <section id="hero" className="hero section dark-background">
@@ -16,7 +13,6 @@ function Hero() {
 
             <div className="container">
                 <div className="row gy-4 justify-content-between">
-                    {/* Hero Image */}
                     <div className="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
 
                         <img src={Hero2} className="img-fluid animated" alt="Hero Illustration" />
@@ -25,21 +21,15 @@ function Hero() {
                     {/* Hero Text Content */}
                     <div className="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
                         <h1>
-                            Build Your Landing Page With <span>Fill Fun</span>
+                            Fill Fun -Where knowledge meets fun
                         </h1>
-                        <p>We are a team of talented designers making websites with Bootstrap</p>
+                        <p>Dive into a world of trivia surprises!</p>
                         <div className="d-flex">
                             {/* CTA Buttons */}
                             <a href="#about" className="btn-get-started">
                                 Get Started
                             </a>
-                            <a
-                                href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                                className="glightbox btn-watch-video d-flex align-items-center"
-                            >
-                                <i className="bi bi-play-circle"></i>
-                                <span>Watch Video</span>
-                            </a>
+
                         </div>
                     </div>
                 </div>
