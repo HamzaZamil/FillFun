@@ -140,6 +140,8 @@ h6 {
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
+  /* --background-color: #10058c; */
+
 }
 
 .header .logo {
@@ -148,6 +150,7 @@ h6 {
 
 .header .logo img {
   max-height: 60px;
+  max-width: 100%;
   margin-right: 8px;
 }
 
@@ -451,7 +454,7 @@ h6 {
 }
 
 .footer .footer-about .logo img {
-  max-height: 40px;
+  max-height: 90px;
   margin-right: 6px;
 }
 
@@ -874,6 +877,7 @@ section,
 
 .hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
+
 }
 
 @media (max-width: 640px) {
@@ -1103,6 +1107,7 @@ section,
 .features .features-item h3 a {
   color: var(--heading-color);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .features .features-item:hover {
