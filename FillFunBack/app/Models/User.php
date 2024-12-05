@@ -52,4 +52,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Board::class, 'game_history')->withPivot('score');
     }
+
+    public function wishlist()
+    {
+        return $this->belongsToMany(Board::class, 'wishlists');
+    }
+
 }
