@@ -5,13 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Board extends Model
+class Wishlist extends Model
 {
     use HasFactory;
 
-    public function usersWhoWishlisted()
-    {
-        return $this->belongsToMany(User::class, 'wishlists');
-    }
-
+    protected $fillable = ['user_id', 'board_id'];
 }
