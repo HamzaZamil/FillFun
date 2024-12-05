@@ -42,4 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function boards()
+    {
+        return $this->belongsToMany(Board::class, 'wishlist');
+    }
+
+    public function gameHistory()
+    {
+        return $this->belongsToMany(Board::class, 'game_history')->withPivot('score');
+    }
+
+    public function wishlist()
+    {
+        return $this->belongsToMany(Board::class, 'wishlists');
+    }
+
 }
