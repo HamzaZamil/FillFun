@@ -14,4 +14,8 @@ class Board extends Model
         return $this->belongsToMany(User::class, 'wishlists');
     }
 
+    public function userGameHistory(){
+        return $this->belongsToMany(User::class, 'History');
+    }
+
 }

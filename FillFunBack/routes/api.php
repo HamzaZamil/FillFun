@@ -19,5 +19,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/board/{id}/wishlist', [BoardController::class, 'addToWishlist']);
-Route::delete('/board/{id}/wishlist', [BoardController::class, 'removeFromWishlist']);
+Route::post('/board/wishlist', [BoardController::class, 'addToWishlist']);
+Route::delete('/board/wishlist', [BoardController::class, 'removeFromWishlist']);
+
+Route::post('/board/history', [BoardController::class, 'addToHistory']);

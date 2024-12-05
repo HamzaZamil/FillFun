@@ -2,35 +2,34 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddToWishlistRequest extends FormRequest
+class AddToGameHistoryRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize()
     {
         // Authorize the user (you can add additional authorization logic here)
-        // return Auth::check();
-        return true;
+        return true; // Adjust as needed, e.g., Auth::check();
     }
 
     public function rules()
     {
         return [
-            'board_id' => 'required|exists:boards,id',
             'user_id' => 'required|exists:users,id',
+            'board_id' => 'required|exists:boards,id',
+            'score' => 'required|integer',
         ];
     }
 
     public function messages()
     {
         return [
+            'user_id.required' => 'The user ID is required.',
+            'user_id.exists' => 'The selected user does not exist.',
             'board_id.required' => 'The board ID is required.',
             'board_id.exists' => 'The selected board does not exist.',
-            'user_id.exists' => 'The selected user does not exist.',
+            'score.required' => 'The score is required.',
+            'score.integer' => 'The score must be an integer.',
         ];
     }
 }
