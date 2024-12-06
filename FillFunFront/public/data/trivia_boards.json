@@ -2,6 +2,9 @@
     {
         "board_id": 1,
         "category": "Geography",
+        "name": "Global Explorer",
+        "description": "Travel the world without leaving your chair! Test your knowledge of countries, cities, and landmarks.",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "multiple",
@@ -45,6 +48,9 @@
     {
         "board_id": 2,
         "category": "Entertainment: Music",
+        "name": "Music Maestro",
+        "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
+        "number_of_questions": 8,
         "questions": [
             {
                 "type": "multiple",
@@ -140,6 +146,9 @@
     {
         "board_id": 3,
         "category": "Celebrities",
+        "name": "Star Gossip",
+        "description": "How well do you know the world of fame and glamour? Take this quiz to find out!",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -159,6 +168,9 @@
     {
         "board_id": 4,
         "category": "History",
+        "name": "Time Travelers",
+        "description": "Travel back in time and revisit the moments that shaped our world.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "multiple",
@@ -214,6 +226,9 @@
     {
         "board_id": 5,
         "category": "Entertainment: Video Games",
+        "name": "Pixel Perfect",
+        "description": "Level up your trivia game! A perfect challenge for gaming legends.",
+        "number_of_questions": 9,
         "questions": [
             {
                 "type": "multiple",
@@ -329,6 +344,9 @@
     {
         "board_id": 6,
         "category": "Science: Computers",
+        "name": "Tech Titans",
+        "description": "Crack the code! Ideal for computer enthusiasts and future tech moguls.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "multiple",
@@ -382,6 +400,9 @@
     {
         "board_id": 7,
         "category": "Sports",
+        "name": "Sporting Legends",
+        "description": "Gear up for a challenge! Perfect for sports fans and trivia athletes.",
+        "number_of_questions": 2,
         "questions": [
             {
                 "type": "multiple",
@@ -411,6 +432,9 @@
     {
         "board_id": 8,
         "category": "Entertainment: Film",
+        "name": "Cinema Buff",
+        "description": "Grab some popcorn and test your film trivia knowledge!",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "multiple",
@@ -452,6 +476,9 @@
     {
         "board_id": 9,
         "category": "Entertainment: Comics",
+        "name": "Comic Crusader",
+        "description": "Unleash your inner hero and conquer this comic-themed trivia!",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -470,7 +497,10 @@
     },
     {
         "board_id": 10,
-        "category": "Science &amp; Nature",
+        "category": "Science & Nature",
+        "name": "Nature Nerd",
+        "description": "Explore the wonders of science and the beauty of nature.",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "multiple",
@@ -514,6 +544,9 @@
     {
         "board_id": 11,
         "category": "Vehicles",
+        "name": "Auto Aficionado",
+        "description": "Rev your engines and test your knowledge of all things vehicular.",
+        "number_of_questions": 5,
         "questions": [
             {
                 "type": "multiple",
@@ -532,7 +565,10 @@
     },
     {
         "board_id": 12,
-        "category": "Entertainment: Cartoon &amp; Animations",
+        "category": "Entertainment: Cartoon & Animations",
+        "name": "Animated Antics",
+        "description": "From classic cartoons to modern animations, see how much you know!",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "boolean",
@@ -550,6 +586,9 @@
     {
         "board_id": 13,
         "category": "Entertainment: Television",
+        "name": "TV Buff",
+        "description": "Binge-watched every series? Prove it with this television trivia.",
+        "number_of_questions": 7,
         "questions": [
             {
                 "type": "multiple",
@@ -569,6 +608,9 @@
     {
         "board_id": 14,
         "category": "Entertainment: Japanese Anime &amp; Manga",
+        "name": "Otaku Oracle",
+        "description": "Dive into the world of anime and manga with this specialized quiz.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "multiple",
@@ -588,6 +630,9 @@
     {
         "board_id": 15,
         "category": "Mythology",
+        "name": "Myth Master",
+        "description": "From Greek gods to Norse legends, test your mythological knowledge.",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "boolean",
@@ -605,6 +650,9 @@
     {
         "board_id": 16,
         "category": "Art",
+        "name": "Art Aficionado",
+        "description": "Brush up on your art history and masterpieces in this quiz.",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -624,6 +672,9 @@
     {
         "board_id": 17,
         "category": "General Knowledge",
+        "name": "Trivia Titan",
+        "description": "A mix of questions from various topics to challenge your intellect.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "boolean",
@@ -677,6 +728,9 @@
     {
         "board_id": 18,
         "category": "Entertainment: Books",
+        "name": "Bookworm Bonanza",
+        "description": "Test your knowledge of literature, from classics to modern bestsellers.",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -696,6 +750,9 @@
     {
         "board_id": 19,
         "category": "Science: Gadgets",
+        "name": "Gadget Guru",
+        "description": "Explore the latest and greatest in the world of science and gadgets.",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
