@@ -53,7 +53,7 @@ function Navbar() {
                 className={`header  d-flex align-items-center fixed-top ${isScrolled ? 'scrolled' : ''}`}
             >
                 <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-                    <a href="index.html" className="logo d-flex align-items-center">
+                    <a href="/" className="logo d-flex align-items-center">
                         <img src={Logo} alt="Logo" />
                     </a>
 
@@ -63,15 +63,15 @@ function Navbar() {
                                 <a href="/" className="active">Home</a>
                             </li>
                             <li>
-                                <a href="#about">About</a>
+                                <a href="/#about">About</a>
                             </li>
                             <li>
-                                <a href="#features">Categories</a>
+                                <a href="/#features">Categories</a>
                             </li>
                             <li>
                                 <a href="/boards">Boards</a>
                             </li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="/#contact">Contact</a></li>
                         </ul>
                         {/* Mobile Navigation Toggle */}
                         <button className="mobile-nav-toggle d-xl-none" onClick={toggleMobileNav}>
