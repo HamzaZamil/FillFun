@@ -1,200 +1,99 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Categrories() {
+// Array of category icons
+const categoryIcons = [
+    { name: 'Geography', icon: 'bi-map' },
+    { name: 'Entertainment: Music', icon: 'bi-music-note' },
+    { name: 'Entertainment: Film', icon: 'bi-film' },
+    { name: 'Entertainment: Books', icon: 'bi-book' },
+    { name: 'Science & Nature', icon: 'bi-tree' },
+    { name: 'Science: Computers', icon: 'bi-laptop' },
+    { name: 'Science: Mathematics', icon: 'bi-calculator' },
+    { name: 'Mythology', icon: 'bi-lightning' },
+    { name: 'Sports', icon: 'bi-trophy' },
+    { name: 'Geography', icon: 'bi-map' },
+    { name: 'History', icon: 'bi-clock-history' },
+    { name: 'Politics', icon: 'bi-person-lines-fill' },
+    { name: 'Art', icon: 'bi-brush' },
+    { name: 'Celebrities', icon: 'bi-star' },
+    { name: 'Animals', icon: 'bi-bug' },
+    { name: 'Vehicles', icon: 'bi-truck' },
+    { name: 'Entertainment: Comics', icon: 'bi-book-half' },
+    { name: 'Science: Gadgets', icon: 'bi-tools' },
+    { name: 'Entertainment: Japanese Anime & Manga', icon: 'bi-file-earmark-font' },
+    { name: 'Entertainment: Cartoon & Animations', icon: 'bi-film' }
+];
+
+const LandingPage = () => {
+    const [categories, setCategories] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await fetch('/trivia_boards.json');
+                const data = await response.json();
+                
+
+                const categoriesWithIcons = data.map(category => {
+                    const matchingIcon = categoryIcons.find(icon => icon.name === category.category);
+                    return {
+                        ...category,
+                        icon: matchingIcon ? matchingIcon.icon : 'bi-question-circle'
+                    };
+                });
+                setCategories(categoriesWithIcons);
+            } catch (err) {
+                console.error("Failed to load trivia boards:", err);
+            }
+        };
+
+        fetchCategories();
+    }, []);
+
+    const handleCardClick = (categoryId) => {
+        navigate(`/category/${categoryId}`);
+    };
+
     return (
-        <div>
-            <>
-                {/* Features Section */}
+        
+        <div className="max-w-4xl mx-auto p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <section id="features" className="features section">
+                {/* Section Title */}
+                <div className="container section-title" data-aos="fade-up">
+                    <div>
+                        <span className="description-title">Categories</span>
+                    </div>
+                </div>
+                {/* End Section Title */}
                     <div className="container">
                         <div className="row gy-4">
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={100}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-eye" style={{ color: "#ffbb2c" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Lorem Ipsum
-                                        </a>
-                                    </h3>
+                            {categories.map((category) => (
+                                <div
+                                    key={category.board_id}
+                                    className="col-lg-3 col-md-4"
+                                    data-aos="fade-up"
+                                    data-aos-delay={100}
+                                    onClick={() => handleCardClick(category.board_id)}
+                                >
+                                    <div className="features-item">
+                                        <i className={`bi ${category.icon}`} style={{ color: "#ffbb2c" }} />
+                                        <h3>
+                                            <a href="#" className="stretched-link">
+                                                {category.category}
+                                            </a>
+                                        </h3>
+                                    </div>
                                 </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={200}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-infinity" style={{ color: "#5578ff" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Dolor Sitema
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={300}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-mortarboard" style={{ color: "#e80368" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Sed perspiciatis
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={400}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-nut" style={{ color: "#e361ff" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Magni Dolores
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={500}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-shuffle" style={{ color: "#47aeff" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Nemo Enim
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={600}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-star" style={{ color: "#ffa76e" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Eiusmod Tempor
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={700}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-x-diamond" style={{ color: "#11dbcf" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Midela Teren
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={800}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-camera-video" style={{ color: "#4233ff" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Pira Neve
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={900}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-command" style={{ color: "#b2904f" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Dirada Pack
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={1000}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-dribbble" style={{ color: "#b20969" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Moton Ideal
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={1100}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-activity" style={{ color: "#ff5828" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Verdo Park
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
-                            <div
-                                className="col-lg-3 col-md-4"
-                                data-aos="fade-up"
-                                data-aos-delay={1200}
-                            >
-                                <div className="features-item">
-                                    <i className="bi bi-brightness-high" style={{ color: "#29cc61" }} />
-                                    <h3>
-                                        <a href="" className="stretched-link">
-                                            Flavor Nivelanda
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            {/* End Feature Item */}
+                            ))}
                         </div>
                     </div>
                 </section>
-                {/* /Features Section */}
-            </>
-
+            </div>
         </div>
     );
-}
+};
 
-export default Categrories;
+export default LandingPage;

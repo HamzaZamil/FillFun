@@ -9,20 +9,18 @@ function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-
             if (window.scrollY > 100) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
             }
-
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [isScrolled]);
+    }, []);
 
     const toggleMobileNav = () => {
         setMobileNavActive((prevState) => !prevState);
@@ -39,17 +37,9 @@ function Navbar() {
     };
 
     return (
-        <>
-
-            <header
-                id="header" style={isScrolled ? {
-                    backgroundColor: '#10058c'
-                } : {
-
-                    backgroundColor: 'transparent'
-                }}
-
-
+        <header
+            id="header"
+            style={isScrolled ? { backgroundColor: '#10058c' } : { backgroundColor: 'transparent' }}
                 className={`header  d-flex align-items-center fixed-top ${isScrolled ? 'scrolled' : ''}`}
             >
                 <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -80,7 +70,6 @@ function Navbar() {
                     </nav>
                 </div>
             </header>
-        </>
     );
 }
 
