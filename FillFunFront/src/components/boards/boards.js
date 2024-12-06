@@ -11,7 +11,7 @@ function Boards() {
         fetch('/data/trivia_boards.json')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+
                 setBoards(data);
                 setFilteredBoards(data);
             })

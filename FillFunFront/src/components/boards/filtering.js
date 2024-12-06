@@ -45,22 +45,7 @@ function Filtering({ onFilterChange }) {
                 ))}
             </div>
 
-            {/* Difficulty Filter */}
-            <div>
-                <h4 className="mt-3">Difficulty</h4>
-                {difficulties.map((level) => (
-                    <div key={level}>
-                        <input
-                            type="checkbox"
-                            id={`difficulty-${level}`}
-                            value={level}
-                            checked={selectedFilters.difficulty.includes(level)}
-                            onChange={() => handleCheckboxChange("difficulty", level)}
-                        />
-                        <label htmlFor={`difficulty-${level}`} className="mx-2">{level}</label>
-                    </div>
-                ))}
-            </div>
+          
         </div>
     );
 }

@@ -3,6 +3,7 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import Landing from './components/landing/landing';
 import Boards from './components/boards/boards.js';
+import Quiz from './components/boards/quiz.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/vendor/swiper/swiper-bundle.min.css';
@@ -62,6 +63,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/boards" element={<Boards />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
 
         <Footer />

@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card({ board }) {
-
     const [isFavorite, setIsFavorite] = useState(false);
+    const navigate = useNavigate();  // Hook for navigation
 
     const toggleFavorite = () => {
         setIsFavorite(!isFavorite);
+    };
+
+    const handlePlayNow = () => {
+        navigate('/quiz', { state: { questions: board.questions } });
     };
 
     return (
@@ -27,9 +32,9 @@ function Card({ board }) {
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.
                 </p>
-                <a href="#" className="btn btn-primary">
+                <button onClick={handlePlayNow} className="btn btn-primary">
                     Play Now
-                </a>
+                </button>
             </div>
         </div>
     );
