@@ -1,12 +1,40 @@
 import React, { useState } from "react";
+import axiosInstance from "../../api/axiosInstance";
+import Swal from 'sweetalert2';
+
 
 function Card({ board }) {
-
     const [isFavorite, setIsFavorite] = useState(false);
 
-    const toggleFavorite = () => {
-        setIsFavorite(!isFavorite);
-    };
+    const toggleFavorite = async () => {
+        try {
+            const userId = localStorage.getItem('user_id');
+    
+            if (!userId) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Must Login',
+                    text: 'Please log in to add to favorites.',
+                });
+                return;
+            }
+    
+            const response = await axiosInstance.post('/wishlist/toggle', {
+                board_id: board.id,
+                user_id: userId,
+            });
+    
+            if (response.status === 200 || response.status === 201) {
+                setIsFavorite(response.data.isFavorite);
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.response?.data?.message || 'Something went wrong!',
+            });
+        }
+    };    
 
     return (
         <div className="card" style={{ width: "18rem", position: "relative" }}>
@@ -22,10 +50,9 @@ function Card({ board }) {
 
             <img className="card-img-top" src={board.image} alt="Card cap" />
             <div className="card-body">
-                <h5 className="card-title">{board.category}</h5>
+                <h5 className="card-title">{board.name}</h5>
                 <p className="card-text">
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    {board.description}
                 </p>
                 <a href="#" className="btn btn-primary">
                     Play Now
