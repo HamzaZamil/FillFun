@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
 import Swal from 'sweetalert2';
 
 
 function Card({ board }) {
     const [isFavorite, setIsFavorite] = useState(false);
+    const navigate = useNavigate();  // Hook for navigation
 
+    const handlePlayNow = () => {
+        navigate('/quiz', { state: { questions: board.questions } });
+    };
     const toggleFavorite = async () => {
         try {
             const userId = localStorage.getItem('user_id');
@@ -54,9 +59,9 @@ function Card({ board }) {
                 <p className="card-text">
                     {board.description}
                 </p>
-                <a href="#" className="btn btn-primary">
+                <button onClick={handlePlayNow} className="btn btn-primary">
                     Play Now
-                </a>
+                </button>
             </div>
         </div>
     );
