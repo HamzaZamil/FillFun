@@ -22,6 +22,21 @@ class AuthController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:8',
+        ],
+        [
+            // Custom messages
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a valid string.',
+            'name.max' => 'The name may not be greater than 255 characters.',
+            
+            'email.required' => 'The email field is required.',
+            'email.email' => 'Please provide a valid email address.',
+            'email.unique' => 'This email is already taken. Please choose another.',
+            'email.max' => 'The email may not be greater than 255 characters.',
+            
+            'password.required' => 'The password field is required.',
+            'password.confirmed' => 'Password confirmation does not match.',
+            'password.min' => 'The password must be at least 8 characters long.',
         ]);
 
         // Create user

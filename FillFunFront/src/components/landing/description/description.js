@@ -10,16 +10,16 @@ function description() {
         <>
             <section id="details" className="details section">
                 {/* Section Title */}
-                <div className="container section-title" data-aos="fade-up">
+                {/* <div className="container section-title" data-aos="fade-up">
                     <h2>Details</h2>
                     <div>
                         <span>Check Our</span>{" "}
                         <span className="description-title">Details</span>
                     </div>
-                </div>
+                </div> */}
                 {/* End Section Title */}
                 <div className="container">
-                    <div className="row gy-4 align-items-center features-item">
+                    <div className="row gy-4 align-items-center features-item mt-3">
                         <div
                             className="col-md-5 d-flex align-items-center"
                             data-aos="zoom-out"
@@ -29,128 +29,51 @@ function description() {
                         </div>
                         <div className="col-md-7" data-aos="fade-up" data-aos-delay={100}>
                             <h3>
-                                Voluptatem dignissimos provident quasi corporis voluptates sit
-                                assumenda.
+                            Our mission
                             </h3>
                             <p className="fst-italic">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Our mission is to provide a fun and interactive learning experience through our fill-in-the-blank game. We aim to make education and entertainment seamless, engaging users with a variety of categories and questions that challenge their knowledge and creativity.
                             </p>
-                            <ul>
-                                <li>
-                                    <i className="bi bi-check" />
-                                    <span>
-                                        {" "}
-                                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </span>
-                                </li>
-                                <li>
-                                    <i className="bi bi-check" />{" "}
-                                    <span>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit.
-                                    </span>
-                                </li>
-                                <li>
-                                    <i className="bi bi-check" />{" "}
-                                    <span>Ullam est qui quos consequatur eos accusamus.</span>
-                                </li>
-                            </ul>
+                            
                         </div>
                     </div>
                     {/* Features Item */}
-                    <div className="row gy-4 align-items-center features-item">
+                    <div className="row gy-4 align-items-center features-item mt-3">
                         <div
                             className="col-md-5 order-1 order-md-2 d-flex align-items-center"
                             data-aos="zoom-out"
                             data-aos-delay={200}
                         >
-                            <img src={Detail2} className="img-fluid" alt="" />
+                            <img src={Detail2} className="img-fluid img-circle" alt="" />
                         </div>
                         <div
                             className="col-md-7 order-2 order-md-1"
                             data-aos="fade-up"
                             data-aos-delay={200}
                         >
-                            <h3>Corporis temporibus maiores provident</h3>
+                            <h3>Our Vision</h3>
                             <p className="fst-italic">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            We envision a world where learning is enjoyable and accessible to everyone. Our platform brings together people from all walks of life, encouraging them to expand their horizons through engaging and thought-provoking content.
                             </p>
-                            <p>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est
-                                laborum
-                            </p>
+                            
                         </div>
                     </div>
                     {/* Features Item */}
-                    <div className="row gy-4 align-items-center features-item">
+                    <div className="row gy-4 align-items-center features-item mt-3">
                         <div className="col-md-5 d-flex align-items-center" data-aos="zoom-out">
                             <img src={Detail3} className="img-fluid" alt="" />
                         </div>
                         <div className="col-md-7" data-aos="fade-up">
                             <h3>
-                                Sunt consequatur ad ut est nulla consectetur reiciendis animi
-                                voluptas
+                            How It Works
                             </h3>
                             <p>
-                                Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia
-                                minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor
-                                doloremque.
+                            Choose a category that interests you, select a board, and start filling in the blanks! Each board contains multiple questions designed to test your knowledge and creativity. Whether you're a trivia buff or just looking for a fun challenge, our platform has something for everyone.
                             </p>
-                            <ul>
-                                <li>
-                                    <i className="bi bi-check" />{" "}
-                                    <span>
-                                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </span>
-                                </li>
-                                <li>
-                                    <i className="bi bi-check" />
-                                    <span>
-                                        {" "}
-                                        Duis aute irure dolor in reprehenderit in voluptate velit.
-                                    </span>
-                                </li>
-                                <li>
-                                    <i className="bi bi-check" />{" "}
-                                    <span>
-                                        Facilis ut et voluptatem aperiam. Autem soluta ad fugiat
-                                    </span>
-                                    .
-                                </li>
-                            </ul>
+                           
                         </div>
                     </div>
-                    {/* Features Item */}
-                    <div className="row gy-4 align-items-center features-item">
-                        <div
-                            className="col-md-5 order-1 order-md-2 d-flex align-items-center"
-                            data-aos="zoom-out"
-                        >
-                            <img src={Detail4} className="img-fluid" alt="" />
-                        </div>
-                        <div className="col-md-7 order-2 order-md-1" data-aos="fade-up">
-                            <h3>
-                                Quas et necessitatibus eaque impedit ipsum animi consequatur
-                                incidunt in
-                            </h3>
-                            <p className="fst-italic">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <p>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est
-                                laborum
-                            </p>
-                        </div>
-                    </div>
-                    {/* Features Item */}
+                    
                 </div>
             </section>
             {/* /Details Section */}

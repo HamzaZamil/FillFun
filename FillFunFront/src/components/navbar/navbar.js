@@ -13,20 +13,18 @@ function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-
             if (window.scrollY > 100) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
             }
-
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [isScrolled]);
+    }, []);
 
     const toggleMobileNav = () => {
         setMobileNavActive((prevState) => !prevState);
@@ -90,7 +88,6 @@ function Navbar() {
                     </nav>
                 </div>
             </header>
-        </>
     );
 }
 
