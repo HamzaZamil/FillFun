@@ -64,15 +64,15 @@ function Navbar() {
                             <li>
                                 <a href="/" className="active">Home</a>
                             </li>
-                            
+
                             {/* <li>
                                 <a href="/#about">Profile</a>
                             </li>
                             */
-                            
+
                             }
 
-                            
+
                             <li>
                                 <a href="/#features"></a>
                             </li>
@@ -88,6 +88,7 @@ function Navbar() {
                     </nav>
                 </div>
             </header>
+        </>
     );
 }
 

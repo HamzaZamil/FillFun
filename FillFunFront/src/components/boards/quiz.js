@@ -13,6 +13,16 @@ function Quiz() {
   const [showAlert, setShowAlert] = useState(false);
   const [result, setResult] = useState(false);
 
+  useEffect(() => {
+    if (result && score === questions.length) {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+    }
+  }, [score, questions.length]);
+
   if (!questions || questions.length === 0) {
     return <div className="container text-center">No questions available</div>;
   }
@@ -20,7 +30,7 @@ function Quiz() {
   const handleNext = () => {
     if (!lock) {
       setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000); // Auto-hide alert
+      setTimeout(() => setShowAlert(false), 3000);
     } else if (currentIndex < questions.length - 1) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
       setlock(false);
@@ -35,17 +45,6 @@ function Quiz() {
       setlock(false);
     }
   };
-
-  // Trigger confetti if score matches number of questions, only when result is true
-  useEffect(() => {
-    if (result && score === questions.length) {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }, // Adjust origin for a better effect
-      });
-    }
-  }, [result, score, questions.length]); // Dependency on result, score, and questions.length
 
   if (result) {
     return (
