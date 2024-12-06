@@ -71,15 +71,11 @@ function Navbar() {
                             */
 
                             }
-
-
-                            <li>
-                                <a href="/#features"></a>
-                            </li>
                             <li>
                                 <a href="/boards">Boards</a>
                             </li>
                             <li><a href="/#contact">Contact</a></li>
+                            <li><a href="/wishlist"><i className="bi bi-heart-fill fs-6"></i></a></li>
                         </ul>
                         {/* Mobile Navigation Toggle */}
                         <button className="mobile-nav-toggle d-xl-none" onClick={toggleMobileNav}>
