@@ -8,10 +8,10 @@ function Landing() {
 
     return <>
         <Hero />
-        <About />
         <Categrories />
         <Desc />
         <Contact />
+        <About />
 
     </>;
 }
