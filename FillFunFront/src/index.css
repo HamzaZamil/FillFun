@@ -1743,44 +1743,17 @@ section,
 .starter-section {
 }
 
-.app {
-  display: flex;
+.filtering {
+  background-color: #f1f1f1;
+  padding: 30px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.filter-sidebar {
-  width: 20%;
-  padding: 20px;
-  border-right: 1px solid #ddd;
-  background-color: #f9f9f9;
+.filtering h4{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 20px;
 }
 
-.filter-sidebar h3 {
-  margin-bottom: 10px;
-}
-
-.filter-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.filter-sidebar li {
-  margin-bottom: 10px;
-}
-
-.filter-sidebar button {
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-}
-
-.filter-sidebar button.active {
-  background-color: #0056b3;
-}
-
-.trivia-questions {
-  flex: 1;
-  padding: 20px;
-}
