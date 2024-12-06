@@ -11,11 +11,11 @@ class Board extends Model
 
     public function usersWhoWishlisted()
     {
-        return $this->belongsToMany(User::class, 'wishlists');
+        return $this->belongsToMany(User::class, 'wishlist');
     }
 
     public function userGameHistory(){
-        return $this->belongsToMany(User::class, 'History');
+        return $this->belongsToMany(User::class, 'game_history', 'board_id', 'user_id')->withPivot('score');
     }
 
 }
