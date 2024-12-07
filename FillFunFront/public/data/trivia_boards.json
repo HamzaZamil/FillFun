@@ -1,6 +1,6 @@
 [
     {
-        "board_id": 1,
+        "id": 1,
         "category": "Geography",
         "name": "Global Explorer",
         "description": "Travel the world without leaving your chair! Test your knowledge of countries, cities, and landmarks.",
@@ -46,7 +46,7 @@
         "image": "https://c8.alamy.com/comp/K179PN/explorer-world-globe-character-cartoon-K179PN.jpg"
     },
     {
-        "board_id": 2,
+        "id": 2,
         "category": "Entertainment: Music",
         "name": "Music Maestro",
         "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
@@ -144,7 +144,7 @@
         "image": "https://png.pngtree.com/png-vector/20240801/ourlarge/pngtree-cartoon-male-orchestra-director-png-image_13056643.png"
     },
     {
-        "board_id": 3,
+        "id": 3,
         "category": "Celebrities",
         "name": "Star Gossip",
         "description": "How well do you know the world of fame and glamour? Take this quiz to find out!",
@@ -166,7 +166,7 @@
         "image": "https://media.istockphoto.com/id/693210524/vector/pop-art-style-comics-panel-gossip-girl-whispering-secret-in-ear-word-of-mouth-vector.jpg?s=612x612&w=0&k=20&c=4YeSgU2oo9qW6tObPktTy_bW0L8RZKRw4X7B3YPi5pk="
     },
     {
-        "board_id": 4,
+        "id": 4,
         "category": "History",
         "name": "Time Travelers",
         "description": "Travel back in time and revisit the moments that shaped our world.",
@@ -224,7 +224,7 @@
         "image": "https://media.istockphoto.com/id/1094602572/vector/time-machine.jpg?s=612x612&w=0&k=20&c=EUIPzDujKyD6D9-XcPBV9LOivIeoRbjjA9MEXy6dfaA="
     },
     {
-        "board_id": 5,
+        "id": 5,
         "category": "Entertainment: Video Games",
         "name": "Pixel Perfect",
         "description": "Level up your trivia game! A perfect challenge for gaming legends.",
@@ -342,7 +342,7 @@
         "image": "https://img.freepik.com/premium-photo/eerily-realistic-3d-animation-boy-blocks-mosaicinspired-pixel-perfect-cartoon_899449-375841.jpg"
     },
     {
-        "board_id": 6,
+        "id": 6,
         "category": "Science: Computers",
         "name": "Tech Titans",
         "description": "Crack the code! Ideal for computer enthusiasts and future tech moguls.",
@@ -398,7 +398,7 @@
         "image": "https://media.licdn.com/dms/image/v2/C4E0BAQGViODTU3fn-w/company-logo_200_200/company-logo_200_200/0/1649162499397/team_tech_titans_logo?e=2147483647&v=beta&t=1NZhpNSasNsvkkVvvpVFh66C70AvcH98k9doVYrEI30"
     },
     {
-        "board_id": 7,
+        "id": 7,
         "category": "Sports",
         "name": "Sporting Legends",
         "description": "Gear up for a challenge! Perfect for sports fans and trivia athletes.",
@@ -430,7 +430,7 @@
         "image": "https://img.freepik.com/premium-vector/happy-children-playing-sports-outdoors-cartoon-style_657438-34747.jpg"
     },
     {
-        "board_id": 8,
+        "id": 8,
         "category": "Entertainment: Film",
         "name": "Cinema Buff",
         "description": "Grab some popcorn and test your film trivia knowledge!",
@@ -474,7 +474,7 @@
         "image": "https://thumbs.dreamstime.com/b/cartoon-cinema-building-vector-modern-exterior-facade-urban-architecture-flat-design-style-illustration-88982586.jpg"
     },
     {
-        "board_id": 9,
+        "id": 9,
         "category": "Entertainment: Comics",
         "name": "Comic Crusader",
         "description": "Unleash your inner hero and conquer this comic-themed trivia!",
@@ -496,7 +496,7 @@
         "image": "https://marketplace.canva.com/EAF7iUA9Uhs/1/0/1600w/canva-colorful-festive-retro-superhero-comic-strip-bqnFhYQ96iY.jpg"
     },
     {
-        "board_id": 10,
+        "id": 10,
         "category": "Science & Nature",
         "name": "Nature Nerd",
         "description": "Explore the wonders of science and the beauty of nature.",
@@ -542,7 +542,7 @@
         "image": "https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:350/h:350/q:75/rt:fill/g:ce/https://bleedingcool.com/wp-content/uploads/2023/02/diary-of-a-nature-nerd-350x350.jpg"
     },
     {
-        "board_id": 11,
+        "id": 11,
         "category": "Vehicles",
         "name": "Auto Aficionado",
         "description": "Rev your engines and test your knowledge of all things vehicular.",
@@ -564,7 +564,7 @@
         "image": "https://img.freepik.com/premium-photo/cartoon-digital-avatars-auto-aficionado-holding-clipboard-checking-off-items-car_216520-94300.jpg?w=360"
     },
     {
-        "board_id": 12,
+        "id": 12,
         "category": "Entertainment: Cartoon & Animations",
         "name": "Animated Antics",
         "description": "From classic cartoons to modern animations, see how much you know!",
@@ -584,7 +584,7 @@
         "image": "https://cartoonresearch.com/wp-content/uploads/2024/06/Wizard-Arts-344.jpg"
     },
     {
-        "board_id": 13,
+        "id": 13,
         "category": "Entertainment: Television",
         "name": "TV Buff",
         "description": "Binge-watched every series? Prove it with this television trivia.",
@@ -674,7 +674,7 @@
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDL9_ENGeUDV5QbUAYxxlt_PIG3js3KoZa4Q&s"
     },
     {
-        "board_id": 14,
+        "id": 14,
         "category": "Entertainment: Japanese Anime and Manga",
         "name": "Otaku Oracle",
         "description": "Dive into the world of anime and manga with this specialized quiz.",
@@ -696,7 +696,7 @@
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzEgPz4O7rFNKZfnPiaYr9_AC0_BkR9f8rcw&s"
     },
     {
-        "board_id": 15,
+        "id": 15,
         "category": "Mythology",
         "name": "Myth Master",
         "description": "From Greek gods to Norse legends, test your mythological knowledge.",
@@ -716,7 +716,7 @@
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTjiuhdUEuLntoaivqfwU8rK-Ci7o88pmVDQ&s"
     },
     {
-        "board_id": 16,
+        "id": 16,
         "category": "Art",
         "name": "Art Aficionado",
         "description": "Brush up on your art history and masterpieces in this quiz.",
@@ -738,7 +738,7 @@
         "image": "https://img.freepik.com/premium-photo/man-artist-2d-cartoon-illustraton-white-background-high_889056-26894.jpg"
     },
     {
-        "board_id": 17,
+        "id": 17,
         "category": "General Knowledge",
         "name": "Trivia Titan",
         "description": "A mix of questions from various topics to challenge your intellect.",
@@ -794,7 +794,7 @@
         "image": "https://thumbs.dreamstime.com/b/characters-answer-test-question-intellect-show-gaming-cartoon-man-woman-pressing-button-answering-quiz-questions-game-118076003.jpg"
     },
     {
-        "board_id": 18,
+        "id": 18,
         "category": "Entertainment: Books",
         "name": "Bookworm Bonanza",
         "description": "Test your knowledge of literature, from classics to modern bestsellers.",
@@ -816,7 +816,7 @@
         "image": "https://thumbs.dreamstime.com/b/set-cartoon-people-reading-books-different-age-vector-illustration-52609442.jpg"
     },
     {
-        "board_id": 19,
+        "id": 19,
         "category": "Science: Gadgets",
         "name": "Gadget Guru",
         "description": "Explore the latest and greatest in the world of science and gadgets.",
