@@ -32,13 +32,15 @@ class BoardController extends Controller
         if ($wishlist) {
             $wishlist->delete();
             return response()->json([
-                'message' => 'Board removed from wishlist successfully'
+                'message' => 'Board removed from wishlist successfully',
+                'isFavorite' => false
             ], 200);
         }
 
         Wishlist::create($validated);
         return response()->json([
-            'message' => 'Board added to wishlist successfully'
+            'message' => 'Board added to wishlist successfully',
+            'isFavorite' => true
         ], 201);
     }
 
