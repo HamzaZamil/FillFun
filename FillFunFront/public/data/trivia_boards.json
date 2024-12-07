@@ -51,6 +51,9 @@
         "name": "Music Maestro",
         "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
         "number_of_questions": 8,
+        "name": "Music Maestro",
+        "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
+        "number_of_questions": 8,
         "questions": [
             {
                 "type": "multiple",

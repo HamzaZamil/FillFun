@@ -1,17 +1,45 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance";
+import Swal from 'sweetalert2';
+
 
 function Card({ board }) {
     const [isFavorite, setIsFavorite] = useState(false);
     const navigate = useNavigate();
 
-    const toggleFavorite = () => {
-        setIsFavorite(!isFavorite);
-    };
-
     const handlePlayNow = () => {
         navigate('/quiz', { state: { questions: board.questions } });
     };
+    const toggleFavorite = async () => {
+        try {
+            const userId = localStorage.getItem('user_id');
+    
+            if (!userId) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Must Login',
+                    text: 'Please log in to add to favorites.',
+                });
+                return;
+            }
+    
+            const response = await axiosInstance.post('/wishlist/toggle', {
+                board_id: board.id,
+                user_id: userId,
+            });
+    
+            if (response.status === 200 || response.status === 201) {
+                setIsFavorite(response.data.isFavorite);
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.response?.data?.message || 'Something went wrong!',
+            });
+        }
+    };    
 
     return (
         <div className="card" style={{ width: "15rem", position: "relative" }}>

@@ -4,6 +4,7 @@ import Footer from './components/footer/footer';
 import Landing from './components/landing/landing';
 import Boards from './components/boards/boards.js';
 import Quiz from './components/boards/quiz.js';
+import Wishlist from './components/boards/wishlist.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/vendor/swiper/swiper-bundle.min.css';
@@ -64,6 +65,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/boards" element={<Boards />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
 
         <Footer />
