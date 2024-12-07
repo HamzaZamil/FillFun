@@ -1,5 +1,3 @@
-
-
 // src/components/LoginPage.jsx
 import React, { useState } from 'react';
 import axiosInstance from '../../api/axiosInstance';
@@ -7,12 +5,11 @@ import {
   MDBContainer,
   MDBCol,
   MDBRow,
-//   MDBBtn,
-//   MDBIcon,
   MDBInput,
-  MDBCheckbox
+  MDBCheckbox,
 } from 'mdb-react-ui-kit';
 import "../../index.css";
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -49,6 +46,7 @@ const Login = () => {
       setServerMessage(response.data.message);
       if (response.data.token) {
         localStorage.setItem('authToken', response.data.token);
+        navigate('/');
       }
     } catch (error) {
       const serverErrors = error.response?.data?.errors || {};
@@ -58,30 +56,36 @@ const Login = () => {
       );
     }
   };
+  const navigate = useNavigate();
 
   return (
-    <MDBContainer fluid className="p-3  h-custom" style={{maxHeight:'53vh', marginTop:'152px'}}>
-      <MDBRow>
-        <MDBCol col="10" md="6">
+    <MDBContainer
+      fluid
+      className="d-flex align-items-center justify-content-center vh-100"
+      style={{ maxWidth: '900px', margin: 'auto' }}
+    >
+      <MDBRow className="w-100">
+        <MDBCol md="6" className="d-none d-md-block">
           <img
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
             className="img-fluid"
-            alt="Sample"
+            alt="Login illustration"
+            style={{ borderRadius: '10px', marginTop:'29px' }}
           />
         </MDBCol>
 
-        <MDBCol col="4" md="6" className="p-5">
-          <form onSubmit={handleSubmit}>
-       
-
-          
-
+        <MDBCol
+          md="6"
+          className="d-flex flex-column align-items-center justify-content-center p-4"
+        >
+          <form onSubmit={handleSubmit} className="w-100">
             {serverMessage && (
               <p className="text-center text-danger">{serverMessage}</p>
             )}
-                <h1 style={{marginBottom:'80px'}}>Login</h1>
-            <MDBInput 
-              wrapperClass="mb-4"
+            <h2 className="mb-4 text-center">Login</h2>
+
+            <MDBInput
+              wrapperClass="mb-3"
               label="Email address"
               id="formControlLg"
               type="email"
@@ -90,10 +94,10 @@ const Login = () => {
               onChange={handleChange}
               size="lg"
             />
-            {errors.email && <p className="text-danger">{errors.email}</p>}
+            {errors.email && <p className="text-danger small">{errors.email}</p>}
 
             <MDBInput
-              wrapperClass="mb-4"
+              wrapperClass="mb-3"
               label="Password"
               id="formControlLg"
               type="password"
@@ -102,34 +106,37 @@ const Login = () => {
               onChange={handleChange}
               size="lg"
             />
-            {errors.password && <p className="text-danger">{errors.password}</p>}
+            {errors.password && (
+              <p className="text-danger small">{errors.password}</p>
+            )}
 
-            <div className="d-flex justify-content-between mb-4">
+            <div className="d-flex justify-content-between align-items-center mb-4">
               <MDBCheckbox
                 name="flexCheck"
                 value=""
                 id="flexCheckDefault"
                 label="Remember me"
               />
-              <a href="#!">Forgot password?</a>
+             
             </div>
 
-            <div className="text-center text-md-start mt-4 pt-2">
-              <button type="submit"  size="lg">
+            <div className="text-center mt-3">
+              <button
+                type="submit"
+                className="btn btn-primary btn-lg btn-block"
+              >
                 Login
               </button>
-              <p className="small fw-bold mt-2 pt-1 mb-2">
+              <p className="small mt-3">
                 Don't have an account?{' '}
-                <a href="#!" className="link-danger">
+                <Link to="/register" className="link-danger">
                   Register
-                </a>
+                </Link>
               </p>
             </div>
           </form>
         </MDBCol>
       </MDBRow>
-
-     
     </MDBContainer>
   );
 };

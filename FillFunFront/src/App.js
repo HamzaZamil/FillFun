@@ -11,7 +11,7 @@ import './assets/vendor/swiper/swiper-bundle.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import './assets/vendor/php-email-form/validate.js';
 
-// import './assets/vendor/purecounter/purecounter_vanilla.js';
+import './assets/vendor/purecounter/purecounter_vanilla.js';
 import './assets/vendor/swiper/swiper-bundle.min.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
