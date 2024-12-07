@@ -3,10 +3,12 @@ import { useLocation } from "react-router-dom";
 import Question from "./question";
 import './question.css';
 import confetti from "canvas-confetti";
-
+import axiosInstance from "../../api/axiosInstance";
+import Swal from "sweetalert2";
 function Quiz() {
   const location = useLocation();
-  const { questions } = location.state || {};
+  const { questions, board } = location.state || {};
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [lock, setlock] = useState(false);
@@ -14,14 +16,59 @@ function Quiz() {
   const [result, setResult] = useState(false);
 
   useEffect(() => {
+
+
+    if (result) {
+      saveResult();
+    }
+
+
     if (result && score === questions.length) {
       confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
       });
+
+
     }
   }, [result, score, questions.length]);
+
+
+  const saveResult = async () => {
+    try {
+      const userId = localStorage.getItem("user_id");
+
+      if (!userId) {
+        Swal.fire({
+          icon: "error",
+          title: "Please Log in",
+          text: "Please log in to continue.",
+        });
+
+        return;
+      }
+
+      const response = await axiosInstance.post(`/board/addToHistory`, {
+        params: {
+          user_id: userId
+          , score: score
+          , board_id: board.board_id
+        },
+      });
+
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text:
+          error.response?.data?.message || "Failed to add history board.",
+      });
+    }
+  };
+
+
+
 
   if (!questions || questions.length === 0) {
     return <div className="container text-center">No questions available</div>;
@@ -79,7 +126,7 @@ function Quiz() {
 
       {showAlert && (
         <div className="alert alert-warning text-center" role="alert">
-          You need to answer the question first :)
+          You need to answer the question first
         </div>
       )}
 

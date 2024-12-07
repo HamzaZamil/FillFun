@@ -3,15 +3,23 @@ import Logo from "../../assets/logo_white.png";
 import { useLocation } from "react-router-dom";
 
 function Navbar() {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [isDeepDropdownOpen, setDeepDropdownOpen] = useState(false);
-    const [isScrolled, setScrolled] = useState(false);
     const [isMobileNavActive, setMobileNavActive] = useState(false);
-
+    const [dropdownStates, setDropdownStates] = useState({});
     const location = useLocation();
     const isQuizPage = location.pathname === '/quiz';
+    const isBoardPage = location.pathname === '/boards';
+    const isWishlistPage = location.pathname === '/wishlist';
+    const isContactPage = location.pathname === '/#contact';
+    const isHomePage = location.pathname === '/';
+    const [isScrolled, setScrolled] = useState(false);
+
 
     useEffect(() => {
+        if (isMobileNavActive) {
+            document.body.classList.add("mobile-nav-active");
+        } else {
+            document.body.classList.remove("mobile-nav-active");
+        }
         const handleScroll = () => {
             if (window.scrollY > 100) {
                 setScrolled(true);
@@ -24,67 +32,76 @@ function Navbar() {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+
+
+    }, [isMobileNavActive]);
 
     const toggleMobileNav = () => {
-        setMobileNavActive((prevState) => !prevState);
+        setMobileNavActive((prev) => !prev);
     };
 
-    const toggleDropdown = (e) => {
-        e.preventDefault();
-        setDropdownOpen((prevState) => !prevState);
+    const handleSamePageLinkClick = () => {
+        if (isMobileNavActive) {
+            toggleMobileNav();
+        }
     };
 
-    const toggleDeepDropdown = (e) => {
-        e.preventDefault();
-        setDeepDropdownOpen((prevState) => !prevState);
+    const toggleDropdown = (index) => {
+        setDropdownStates((prevState) => ({
+            ...prevState,
+            [index]: !prevState[index],
+        }));
     };
 
     return (
-        <>
-
-            <header
-                id="header"
-                style={{
-                    backgroundColor: isQuizPage
+        <header
+            id="header"
+            style={{
+                backgroundColor: isQuizPage
+                    ? '#10058c'
+                    : isScrolled
                         ? '#10058c'
-                        : isScrolled
-                            ? '#10058c'
-                            : 'transparent',
-                }}
-                className={`header d-flex align-items-center fixed-top ${isScrolled ? 'scrolled' : ''}`}
-            >
-                <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-                    <a href="/" className="logo d-flex align-items-center">
-                        <img src={Logo} alt="Logo" />
-                    </a>
+                        : 'transparent',
+            }}
+            className="header d-flex align-items-center fixed-top"
+        >
+            <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+                <a href="/" className="logo d-flex align-items-center">
+                    <img src={Logo} alt="Logo" />
+                </a>
 
-                    <nav id="navmenu" className={`navmenu ${isMobileNavActive ? 'mobile-nav-active' : ''}`}>
-                        <ul>
-                            <li>
-                                <a href="/" className="active">Home</a>
-                            </li>
+                <nav id="navmenu" className={`navmenu ${isMobileNavActive ? "mobile-nav-active" : ""}`}>
+                    <ul>
+                        <li>
+                            <a href="/" onClick={handleSamePageLinkClick} className="active">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/boards" onClick={handleSamePageLinkClick}>
+                                Boards
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#contact" onClick={handleSamePageLinkClick}>
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/wishlist" onClick={handleSamePageLinkClick}>
+                                <i className="bi bi-heart-fill fs-6"></i>
+                            </a>
+                        </li>
 
-                            {/* <li>
-                                <a href="/#about">Profile</a>
-                            </li>
-                            */
+                    </ul>
+                </nav>
 
-                            }
-                            <li>
-                                <a href="/boards">Boards</a>
-                            </li>
-                            <li><a href="/#contact">Contact</a></li>
-                            <li><a href="/wishlist"><i className="bi bi-heart-fill fs-6"></i></a></li>
-                        </ul>
-                        {/* Mobile Navigation Toggle */}
-                        <button className="mobile-nav-toggle d-xl-none" onClick={toggleMobileNav}>
-                            <i className={`bi ${isMobileNavActive ? 'bi-x' : 'bi-list'}`}></i>
-                        </button>
-                    </nav>
-                </div>
-            </header>
-        </>
+                <button
+                    className={`mobile-nav-toggle d-xl-none ${isMobileNavActive ? "bi-x" : "bi-list"}`}
+                    onClick={toggleMobileNav}
+                ></button>
+            </div>
+        </header>
     );
 }
 

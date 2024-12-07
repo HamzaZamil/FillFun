@@ -9,12 +9,23 @@ function Card({ board }) {
     const navigate = useNavigate();
 
     const handlePlayNow = () => {
-        navigate('/quiz', { state: { questions: board.questions } });
+        const userId = localStorage.getItem('user_id');
+
+        if (!userId) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Must Login',
+                text: 'Please log first to play.'
+            });
+            return;
+        }
+        navigate('/quiz', { state: { questions: board.questions, board } });
     };
+
     const toggleFavorite = async () => {
         try {
             const userId = localStorage.getItem('user_id');
-    
+
             if (!userId) {
                 Swal.fire({
                     icon: 'error',
@@ -23,12 +34,12 @@ function Card({ board }) {
                 });
                 return;
             }
-    
+
             const response = await axiosInstance.post('/wishlist/toggle', {
                 board_id: board.id,
                 user_id: userId,
             });
-    
+
             if (response.status === 200 || response.status === 201) {
                 setIsFavorite(response.data.isFavorite);
             }
@@ -39,7 +50,7 @@ function Card({ board }) {
                 text: error.response?.data?.message || 'Something went wrong!',
             });
         }
-    };    
+    };
 
     return (
         <div className="card" style={{ width: "15rem", position: "relative" }}>
