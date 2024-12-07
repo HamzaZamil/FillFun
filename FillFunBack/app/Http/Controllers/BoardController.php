@@ -58,6 +58,21 @@ class BoardController extends Controller
         ], 200);
     }
 
+    public function isInWishlist(Request $request) {
+        $validated = $request->validate([
+            'user_id' =>'required|exists:users,id',
+            'board_id' =>'required|exists:boards,id'
+        ]);
+
+        $isFavorite = Wishlist::where('user_id', $validated['user_id'])
+            ->where('board_id', $validated['board_id'])
+            ->exists();
+
+        return response()->json([
+            'isFavorite' => $isFavorite
+        ], 200);
+    }
+
     public function addToHistory(AddToGameHistoryRequest $request)
     {
         // Add game history
