@@ -5,11 +5,16 @@ import Logo from "../../assets/logo_white.png";
 function Navbar() {
     const [isMobileNavActive, setMobileNavActive] = useState(false);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [isScrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
 
     const location = useLocation();
     const isQuizPage = location.pathname === '/quiz';
+    const isBoardPage = location.pathname === '/boards';
+    const isWishlistPage = location.pathname === '/wishlist';
+    const isContactPage = location.pathname === '/#contact';
+    const isHomePage = location.pathname === '/';
+    const isNotFoundPage = location.pathname === '*';
+    const [isScrolled, setScrolled] = useState(false);
 
     // Check if the user is logged in
     const isLoggedIn = !!localStorage.getItem("authToken");
@@ -59,7 +64,7 @@ function Navbar() {
         <header
             id="header"
             style={{
-                backgroundColor: isQuizPage
+                backgroundColor: isQuizPage || isNotFoundPage
                     ? '#10058c'
                     : isScrolled
                         ? '#10058c'
@@ -75,17 +80,26 @@ function Navbar() {
                 <nav id="navmenu" className={`navmenu ${isMobileNavActive ? "mobile-nav-active" : ""}`}>
                     <ul>
                         <li>
-                            <a href="/" onClick={handleSamePageLinkClick} className="active">
+                            <a href="/" onClick={handleSamePageLinkClick} className={isHomePage ? 'active' : ''}>
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="/boards" onClick={handleSamePageLinkClick}>
+                            <a href="/boards" onClick={handleSamePageLinkClick} className={isBoardPage ? 'active' : ''}>
                                 Boards
                             </a>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a href="/wishlist" onClick={handleSamePageLinkClick}>
+=======
+                            <a href="/#contact" onClick={handleSamePageLinkClick} className={isContactPage ? 'active' : ''}>
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/wishlist" onClick={handleSamePageLinkClick} className={isWishlistPage ? 'active' : ''}>
+>>>>>>> 28b9f9ed721285f3bae6c082fa599dae598aa723
                                 <i className="bi bi-heart-fill fs-6"></i>
                             </a>
                         </li>
