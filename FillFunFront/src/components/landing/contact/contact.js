@@ -31,7 +31,7 @@ function Contact() {
             });
 
             if (response.ok) {
-                setIsSent(true); // Update state to show the sent message
+                setIsSent(true);
                 setFormData({
                     name: '',
                     email: '',
@@ -62,21 +62,21 @@ function Contact() {
                 <div className="row gy-4">
                     <div className="col-lg-4">
                         <div className="info-item d-flex" data-aos="fade-up" data-aos-delay={200}>
-                            <i className="bi bi-geo-alt flex-shrink-0" />
+                            <i className="bi bi-geo-alt flex-shrink-0 m-2" />
                             <div>
                                 <h3>Address</h3>
                                 <p>Amman, Jordan</p>
                             </div>
                         </div>
                         <div className="info-item d-flex" data-aos="fade-up" data-aos-delay={300}>
-                            <i className="bi bi-telephone flex-shrink-0" />
+                            <i className="bi bi-telephone flex-shrink-0 m-2" />
                             <div>
                                 <h3>Call Us</h3>
                                 <p>+962 78690 7594</p>
                             </div>
                         </div>
                         <div className="info-item d-flex" data-aos="fade-up" data-aos-delay={400}>
-                            <i className="bi bi-envelope flex-shrink-0" />
+                            <i className="bi bi-envelope flex-shrink-0 m-2" />
                             <div>
                                 <h3>Email Us</h3>
                                 <p>fillfun@gmail.com</p>
@@ -134,7 +134,7 @@ function Contact() {
                                     <div className={`loading ${isLoading ? 'd-block' : ''}`}>Loading...</div>
                                     <div className={`error-message ${errorMessage ? 'd-block' : ''}`}>{errorMessage}</div>
                                     <div className={`sent-message ${isSent ? 'd-block' : ''}`}>Your message has been sent. Thank you!</div>
-                                    <button type="submit" disabled={isLoading}>Send Message</button>
+                                    <button type="submit" disabled={isLoading} className='btn btn-primary'>Send Message</button>
                                 </div>
                             </div>
                         </form>

@@ -21,7 +21,7 @@ function Quiz() {
         origin: { y: 0.6 },
       });
     }
-  }, [score, questions.length]);
+  }, [result, score, questions.length]);
 
   if (!questions || questions.length === 0) {
     return <div className="container text-center">No questions available</div>;

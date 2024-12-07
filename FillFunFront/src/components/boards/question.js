@@ -1,7 +1,7 @@
 import './question.css';
 import React, { useState, useEffect, useRef } from 'react';
 
-function Question({ question, score, setScore, lock, setlock }) {
+function Question({ question, setScore, lock, setlock }) {
     const [answers, setAnswers] = useState([]);
 
     const Option1 = useRef(null);

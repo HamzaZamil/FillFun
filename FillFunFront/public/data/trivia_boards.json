@@ -2,6 +2,9 @@
     {
         "board_id": 1,
         "category": "Geography",
+        "name": "Global Explorer",
+        "description": "Travel the world without leaving your chair! Test your knowledge of countries, cities, and landmarks.",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "multiple",
@@ -11,7 +14,7 @@
                 "correct_answer": "Victoria",
                 "incorrect_answers": [
                     "Luanda",
-                    "N&#039;Djamena",
+                    "Djamena",
                     "Tripoli"
                 ]
             },
@@ -45,6 +48,9 @@
     {
         "board_id": 2,
         "category": "Entertainment: Music",
+        "name": "Music Maestro",
+        "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
+        "number_of_questions": 8,
         "questions": [
             {
                 "type": "multiple",
@@ -82,7 +88,7 @@
                 "type": "boolean",
                 "difficulty": "medium",
                 "category": "Entertainment: Music",
-                "question": "&quot;The Division Bell&quot; is the final album of the progressive rock band Pink Floyd.",
+                "question": "The Division Bell is the final album of the progressive rock band Pink Floyd.",
                 "correct_answer": "False",
                 "incorrect_answers": [
                     "True"
@@ -104,7 +110,7 @@
                 "type": "boolean",
                 "difficulty": "medium",
                 "category": "Entertainment: Music",
-                "question": "Dave Grohl recorded the Foo Fighters&#039; debut, &quot;Foo Fighters,&quot; by himself.",
+                "question": "Dave Grohl recorded the Foo Fighters debut,Foo Fighters, by himself.",
                 "correct_answer": "True",
                 "incorrect_answers": [
                     "False"
@@ -140,6 +146,9 @@
     {
         "board_id": 3,
         "category": "Celebrities",
+        "name": "Star Gossip",
+        "description": "How well do you know the world of fame and glamour? Take this quiz to find out!",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -159,12 +168,15 @@
     {
         "board_id": 4,
         "category": "History",
+        "name": "Time Travelers",
+        "description": "Travel back in time and revisit the moments that shaped our world.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "hard",
                 "category": "History",
-                "question": "What was the aim of the &quot;Umbrella Revolution&quot; in Hong Kong in 2014?",
+                "question": "What was the aim of the Umbrella Revolution in Hong Kong in 2014?",
                 "correct_answer": "Genuine universal suffrage",
                 "incorrect_answers": [
                     "Gaining Independence",
@@ -214,12 +226,15 @@
     {
         "board_id": 5,
         "category": "Entertainment: Video Games",
+        "name": "Pixel Perfect",
+        "description": "Level up your trivia game! A perfect challenge for gaming legends.",
+        "number_of_questions": 9,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "easy",
                 "category": "Entertainment: Video Games",
-                "question": "If a &quot;360 no-scope&quot; is one full rotation before shooting, how many rotations would a &quot;1080 no-scope&quot; be?",
+                "question": "If a 360 no-scope is one full rotation before shooting, how many rotations would a 1080 no-scope be?",
                 "correct_answer": "3",
                 "incorrect_answers": [
                     "4",
@@ -243,7 +258,7 @@
                 "type": "multiple",
                 "difficulty": "easy",
                 "category": "Entertainment: Video Games",
-                "question": "What is Gabe Newell&#039;s favorite class in Team Fortress 2?",
+                "question": "What is Gabe Newells favorite class in Team Fortress 2?",
                 "correct_answer": "Spy",
                 "incorrect_answers": [
                     "Heavy",
@@ -255,7 +270,7 @@
                 "type": "multiple",
                 "difficulty": "hard",
                 "category": "Entertainment: Video Games",
-                "question": "What Touhou Project character&#039;s first ever appearance was as a midboss in the eighth game, Imperishable Night?",
+                "question": "What Touhou Project characters first ever appearance was as a midboss in the eighth game, Imperishable Night?",
                 "correct_answer": "Tewi Inaba",
                 "incorrect_answers": [
                     "Mystia Lorelei",
@@ -267,7 +282,7 @@
                 "type": "multiple",
                 "difficulty": "hard",
                 "category": "Entertainment: Video Games",
-                "question": "In the SHMUP series, &quot;Gradius&quot;, what is the name of the antagonist faction you fight against?",
+                "question": "In the SHMUP series, Gradius, what is the name of the antagonist faction you fight against?",
                 "correct_answer": "Bacterion",
                 "incorrect_answers": [
                     "Bydo",
@@ -279,7 +294,7 @@
                 "type": "multiple",
                 "difficulty": "medium",
                 "category": "Entertainment: Video Games",
-                "question": "What is the world&#039;s first video game console?",
+                "question": "What is the world first video game console?",
                 "correct_answer": "Magnavox Odyssey",
                 "incorrect_answers": [
                     "Coleco Telstar",
@@ -315,7 +330,7 @@
                 "type": "multiple",
                 "difficulty": "medium",
                 "category": "Entertainment: Video Games",
-                "question": "In Hitman: Blood Money, what is the name of the target in the mission &quot;Death of a Showman&quot;?",
+                "question": "In Hitman: Blood Money, what is the name of the target in the mission Death of a Showman?",
                 "correct_answer": "Joseph Clarence",
                 "incorrect_answers": [
                     "The Swing King",
@@ -329,6 +344,9 @@
     {
         "board_id": 6,
         "category": "Science: Computers",
+        "name": "Tech Titans",
+        "description": "Crack the code! Ideal for computer enthusiasts and future tech moguls.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "multiple",
@@ -370,7 +388,7 @@
                 "type": "boolean",
                 "difficulty": "medium",
                 "category": "Science: Computers",
-                "question": "It&#039;s not possible to format a write-protected DVD-R Hard Disk.",
+                "question": "Its not possible to format a write-protected DVD-R Hard Disk.",
                 "correct_answer": "True",
                 "incorrect_answers": [
                     "False"
@@ -382,6 +400,9 @@
     {
         "board_id": 7,
         "category": "Sports",
+        "name": "Sporting Legends",
+        "description": "Gear up for a challenge! Perfect for sports fans and trivia athletes.",
+        "number_of_questions": 2,
         "questions": [
             {
                 "type": "multiple",
@@ -411,12 +432,15 @@
     {
         "board_id": 8,
         "category": "Entertainment: Film",
+        "name": "Cinema Buff",
+        "description": "Grab some popcorn and test your film trivia knowledge!",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "hard",
                 "category": "Entertainment: Film",
-                "question": "In what Disney movie can you spot the character &quot;Pac-Man&quot; in if you look closely enough in some scenes?",
+                "question": "In what Disney movie can you spot the character Pac-Man in if you look closely enough in some scenes?",
                 "correct_answer": "Tron",
                 "incorrect_answers": [
                     "Big Hero 6",
@@ -438,8 +462,8 @@
                 "type": "multiple",
                 "difficulty": "easy",
                 "category": "Entertainment: Film",
-                "question": "Who directed the 2015 movie &quot;The Revenant&quot;?",
-                "correct_answer": "Alejandro G. I&ntilde;&aacute;rritu",
+                "question": "Who directed the 2015 movie The Revenant?",
+                "correct_answer": "Alejandro G. Irritu",
                 "incorrect_answers": [
                     "Christopher Nolan",
                     "David Fincher",
@@ -452,6 +476,9 @@
     {
         "board_id": 9,
         "category": "Entertainment: Comics",
+        "name": "Comic Crusader",
+        "description": "Unleash your inner hero and conquer this comic-themed trivia!",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -470,12 +497,15 @@
     },
     {
         "board_id": 10,
-        "category": "Science &amp; Nature",
+        "category": "Science & Nature",
+        "name": "Nature Nerd",
+        "description": "Explore the wonders of science and the beauty of nature.",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "medium",
-                "category": "Science &amp; Nature",
+                "category": "Science and Nature",
                 "question": "Which one of these scientists conducted the Gold Foil Experiment which concluded that atoms are mostly made of empty space?",
                 "correct_answer": "Ernest Rutherford",
                 "incorrect_answers": [
@@ -487,7 +517,7 @@
             {
                 "type": "multiple",
                 "difficulty": "medium",
-                "category": "Science &amp; Nature",
+                "category": "Science and Nature",
                 "question": "What polymer is used to make CDs, safety goggles and riot shields?",
                 "correct_answer": "Polycarbonate",
                 "incorrect_answers": [
@@ -499,7 +529,7 @@
             {
                 "type": "multiple",
                 "difficulty": "medium",
-                "category": "Science &amp; Nature",
+                "category": "Science Nature",
                 "question": "Gannymede is the largest moon of which planet?",
                 "correct_answer": "Jupiter",
                 "incorrect_answers": [
@@ -514,12 +544,15 @@
     {
         "board_id": 11,
         "category": "Vehicles",
+        "name": "Auto Aficionado",
+        "description": "Rev your engines and test your knowledge of all things vehicular.",
+        "number_of_questions": 5,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "medium",
                 "category": "Vehicles",
-                "question": "Which Japanese company is the world&#039;s largest manufacturer of motorcycles?",
+                "question": "Which Japanese company is the world's largest manufacturer of motorcycles?",
                 "correct_answer": "Honda",
                 "incorrect_answers": [
                     "Yamaha",
@@ -532,13 +565,16 @@
     },
     {
         "board_id": 12,
-        "category": "Entertainment: Cartoon &amp; Animations",
+        "category": "Entertainment: Cartoon & Animations",
+        "name": "Animated Antics",
+        "description": "From classic cartoons to modern animations, see how much you know!",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "boolean",
                 "difficulty": "medium",
-                "category": "Entertainment: Cartoon &amp; Animations",
-                "question": "Nutcracker Suite was one of the musical pieces featured in Disney&#039;s 1940&#039;s film Fantasia.",
+                "category": "Entertainment: Cartoon and Animations",
+                "question": "Nutcracker Suite was one of the musical pieces featured in Disney 1940's film Fantasia.",
                 "correct_answer": "True",
                 "incorrect_answers": [
                     "False"
@@ -550,6 +586,9 @@
     {
         "board_id": 13,
         "category": "Entertainment: Television",
+        "name": "TV Buff",
+        "description": "Binge-watched every series? Prove it with this television trivia.",
+        "number_of_questions": 7,
         "questions": [
             {
                 "type": "multiple",
@@ -568,13 +607,16 @@
     },
     {
         "board_id": 14,
-        "category": "Entertainment: Japanese Anime &amp; Manga",
+        "category": "Entertainment: Japanese Anime and Manga",
+        "name": "Otaku Oracle",
+        "description": "Dive into the world of anime and manga with this specialized quiz.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "easy",
-                "category": "Entertainment: Japanese Anime &amp; Manga",
-                "question": "In &quot;Fairy Tail&quot;, what is the nickname of Natsu Dragneel?",
+                "category": "Entertainment: Japanese Anime and Manga",
+                "question": "In Fairy Tail, what is the nickname of Natsu Dragneel?",
                 "correct_answer": "The Salamander",
                 "incorrect_answers": [
                     "The Dragon Slayer",
@@ -588,6 +630,9 @@
     {
         "board_id": 15,
         "category": "Mythology",
+        "name": "Myth Master",
+        "description": "From Greek gods to Norse legends, test your mythological knowledge.",
+        "number_of_questions": 3,
         "questions": [
             {
                 "type": "boolean",
@@ -605,6 +650,9 @@
     {
         "board_id": 16,
         "category": "Art",
+        "name": "Art Aficionado",
+        "description": "Brush up on your art history and masterpieces in this quiz.",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
@@ -624,6 +672,9 @@
     {
         "board_id": 17,
         "category": "General Knowledge",
+        "name": "Trivia Titan",
+        "description": "A mix of questions from various topics to challenge your intellect.",
+        "number_of_questions": 4,
         "questions": [
             {
                 "type": "boolean",
@@ -639,7 +690,7 @@
                 "type": "multiple",
                 "difficulty": "medium",
                 "category": "General Knowledge",
-                "question": "Which of these is the name of a Japanese system of alternative medicine, literally meaning &quot;finger pressure&quot;?",
+                "question": "Which of these is the name of a Japanese system of alternative medicine, literally meaning finger pressure?",
                 "correct_answer": "Shiatsu",
                 "incorrect_answers": [
                     "Ukiyo",
@@ -651,7 +702,7 @@
                 "type": "multiple",
                 "difficulty": "hard",
                 "category": "General Knowledge",
-                "question": "If someone said &quot;you are olid&quot;, what would they mean?",
+                "question": "If someone said you are olid, what would they mean?",
                 "correct_answer": "You smell extremely unpleasant.",
                 "incorrect_answers": [
                     "You are out of shape/weak.",
@@ -677,12 +728,15 @@
     {
         "board_id": 18,
         "category": "Entertainment: Books",
+        "name": "Bookworm Bonanza",
+        "description": "Test your knowledge of literature, from classics to modern bestsellers.",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",
                 "difficulty": "medium",
                 "category": "Entertainment: Books",
-                "question": "In the &quot;Harry Potter&quot; novels, what must a Hogwarts student do to enter the Ravenclaw Common Room?",
+                "question": "In the Harry Potter novels, what must a Hogwarts student do to enter the Ravenclaw Common Room?",
                 "correct_answer": "Answer a riddle",
                 "incorrect_answers": [
                     "Rhythmically tap barrels with a wand",
@@ -696,6 +750,9 @@
     {
         "board_id": 19,
         "category": "Science: Gadgets",
+        "name": "Gadget Guru",
+        "description": "Explore the latest and greatest in the world of science and gadgets.",
+        "number_of_questions": 1,
         "questions": [
             {
                 "type": "multiple",

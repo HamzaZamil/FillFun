@@ -1,35 +1,55 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, } from "react";
 import Filtering from './filtering';
 import Card from './card';
 import Search from './search';
+import { useLocation } from "react-router-dom";
+
 
 function Boards() {
     const [boards, setBoards] = useState([]);
     const [filteredBoards, setFilteredBoards] = useState([]);
-
+    const [categories, setCategories] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const location = useLocation();
     useEffect(() => {
         fetch('/data/trivia_boards.json')
             .then(response => response.json())
             .then(data => {
-
                 setBoards(data);
-                setFilteredBoards(data);
+                setCategories([...new Set(data.map(board => board.category))]);
+
+                if (location.state?.category) {
+                    const initialFiltered = data.filter(board => board.category === location.state.category);
+                    setFilteredBoards(initialFiltered);
+                } else {
+                    setFilteredBoards(data);
+                }
             })
             .catch(err => console.log(err));
-    }, []);
+    }, [location.state]);
 
     const handleFilterChange = (filters) => {
-        console.log(filters);
-
         const filtered = boards.filter(board => {
-            return board.category === filters.category;
+            const matchesCategory = filters.categories.length === 0 || filters.categories.includes(board.category);
+            const matchesSearch = board.name.toLowerCase().includes(searchQuery.toLowerCase());
+
+            return matchesCategory && matchesSearch;
+        });
+        setFilteredBoards(filtered);
+    };
+
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        const filtered = boards.filter(board => {
+            const matchesSearch = board.name.toLowerCase().includes(query.toLowerCase());
+            const matchesCategory = categories.length === 0 || categories.includes(board.category);
+            return matchesSearch && matchesCategory;
         });
         setFilteredBoards(filtered);
     };
 
     return (
         <>
-
             <div className="page-title dark-background" data-aos="fade">
                 <div className="heading">
                     <div className="container">
@@ -44,11 +64,8 @@ function Boards() {
                     </div>
                 </div>
             </div>
-            {/* End Page Title */}
 
-            {/* Starter Section */}
             <section id="starter-section" className="starter-section section">
-
                 <div className="container section-title" data-aos="fade-up">
                     <h2>Boards Section</h2>
                     <div>
@@ -56,19 +73,14 @@ function Boards() {
                         <span className="description-title">Boards</span>
                     </div>
                 </div>
-                {/* End Section Title */}
                 <div className="container" data-aos="fade-up">
-                    <Search />
+                    <Search handleSearch={handleSearch} />
                     <div className="row">
-
-                        <div className='col-md-3'>
-                            <Filtering onFilterChange={handleFilterChange} />
+                        <div className='col-md-4'>
+                            <Filtering onFilterChange={handleFilterChange} categories={categories} />
                         </div>
-
-                        {/* Cards for the filtered boards */}
-                        <div className='col-md-9'>
+                        <div className='col-md-8'>
                             <div className="row">
-
                                 {filteredBoards.map((board, index) => (
                                     <div key={index} className="col-md-4 m-2">
                                         <Card board={board} />
