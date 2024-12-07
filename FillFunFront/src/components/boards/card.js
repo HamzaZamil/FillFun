@@ -40,8 +40,11 @@ function Card({ board }) {
                 user_id: userId,
             });
 
-            if (response.status === 200 || response.status === 201) {
-                setIsFavorite(response.data.isFavorite);
+            if (response.status === 200) {
+                setIsFavorite(false);
+            }
+            if (response.status === 201) {
+                setIsFavorite(true);
             }
         } catch (error) {
             Swal.fire({

@@ -38,7 +38,11 @@ function Wishlist() {
         params: { user_id: userId },
       });
 
-      setWishlist(response.data);
+      // Extract the nested `board` objects
+      const wishlistData = response.data.boards.map((item) => item.board);
+
+      setWishlist(wishlistData); // Set the extracted `board` objects as the wishlist
+      console.log("Wishlist fetched:", wishlistData);
       setIsLoggedIn(true);
     } catch (error) {
       Swal.fire({

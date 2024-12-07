@@ -3,6 +3,7 @@ import Filtering from './filtering';
 import Card from './card';
 import Search from './search';
 import { useLocation } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance";
 
 
 function Boards() {
@@ -12,20 +13,24 @@ function Boards() {
     const [searchQuery, setSearchQuery] = useState('');
     const location = useLocation();
     useEffect(() => {
-        fetch('/data/trivia_boards.json')
-            .then(response => response.json())
-            .then(data => {
-                setBoards(data);
-                setCategories([...new Set(data.map(board => board.category))]);
-
-                if (location.state?.category) {
-                    const initialFiltered = data.filter(board => board.category === location.state.category);
-                    setFilteredBoards(initialFiltered);
-                } else {
-                    setFilteredBoards(data);
-                }
-            })
-            .catch(err => console.log(err));
+               // Fetch boards from the API
+               axiosInstance.get('/board')
+               .then(response => {
+                   const data = response.data.boards;
+                   setBoards(data);
+                   setCategories([...new Set(data.map(board => board.category))]);
+   
+                   if (location.state?.category) {
+                       const initialFiltered = data.filter(board => board.category === location.state.category);
+                       setFilteredBoards(initialFiltered);
+                   } else {
+                       setFilteredBoards(data);
+                   }
+               })
+               .catch(err => {
+                   console.error('Error fetching boards:', err);
+               });
+   
     }, [location.state]);
 
     const handleFilterChange = (filters) => {

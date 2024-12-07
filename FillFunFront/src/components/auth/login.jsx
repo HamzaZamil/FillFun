@@ -48,6 +48,10 @@ const Login = () => {
         localStorage.setItem('authToken', response.data.token);
         navigate('/');
       }
+      if (response.data.user) {
+        localStorage.setItem('user_id', response.data.user.id);
+        navigate('/');
+      }
     } catch (error) {
       const serverErrors = error.response?.data?.errors || {};
       setErrors(serverErrors);

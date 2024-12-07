@@ -85,11 +85,6 @@ function Navbar() {
                             </a>
                         </li>
                         <li>
-                            <a href="/#contact" onClick={handleSamePageLinkClick}>
-                                Contact
-                            </a>
-                        </li>
-                        <li>
                             <a href="/wishlist" onClick={handleSamePageLinkClick}>
                                 <i className="bi bi-heart-fill fs-6"></i>
                             </a>
