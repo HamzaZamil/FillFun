@@ -83,7 +83,7 @@ function Boards() {
                         <div className='col-md-8'>
                             <div className="row">
                                 {filteredBoards.map((board, index) => (
-                                    <div key={index} className="col-md-4 m-2">
+                                    <div key={index} className="col-md-4 mb-4">
                                         <Card board={board} />
                                     </div>
                                 ))}
