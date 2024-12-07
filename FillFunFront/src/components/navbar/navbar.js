@@ -11,6 +11,7 @@ function Navbar() {
     const isWishlistPage = location.pathname === '/wishlist';
     const isContactPage = location.pathname === '/#contact';
     const isHomePage = location.pathname === '/';
+    const isNotFoundPage = location.pathname === '*';
     const [isScrolled, setScrolled] = useState(false);
 
 
@@ -57,7 +58,7 @@ function Navbar() {
         <header
             id="header"
             style={{
-                backgroundColor: isQuizPage
+                backgroundColor: isQuizPage || isNotFoundPage
                     ? '#10058c'
                     : isScrolled
                         ? '#10058c'
@@ -73,22 +74,22 @@ function Navbar() {
                 <nav id="navmenu" className={`navmenu ${isMobileNavActive ? "mobile-nav-active" : ""}`}>
                     <ul>
                         <li>
-                            <a href="/" onClick={handleSamePageLinkClick} className="active">
+                            <a href="/" onClick={handleSamePageLinkClick} className={isHomePage ? 'active' : ''}>
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="/boards" onClick={handleSamePageLinkClick}>
+                            <a href="/boards" onClick={handleSamePageLinkClick} className={isBoardPage ? 'active' : ''}>
                                 Boards
                             </a>
                         </li>
                         <li>
-                            <a href="/#contact" onClick={handleSamePageLinkClick}>
+                            <a href="/#contact" onClick={handleSamePageLinkClick} className={isContactPage ? 'active' : ''}>
                                 Contact
                             </a>
                         </li>
                         <li>
-                            <a href="/wishlist" onClick={handleSamePageLinkClick}>
+                            <a href="/wishlist" onClick={handleSamePageLinkClick} className={isWishlistPage ? 'active' : ''}>
                                 <i className="bi bi-heart-fill fs-6"></i>
                             </a>
                         </li>
