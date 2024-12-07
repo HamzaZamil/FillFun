@@ -8,7 +8,7 @@ function Hero() {
 
 
     return (
-        <section id="hero" className="hero section dark-background">
+        <section id="hero" className="hero section dark-background"style={{ paddingTop: "190px", paddingBottom: "190px" }}>
             <img src={HeroImage} alt="Hero image" className="hero-bg" />
 
             <div className="container">
