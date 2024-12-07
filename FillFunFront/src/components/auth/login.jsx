@@ -70,7 +70,7 @@ const Login = () => {
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
             className="img-fluid"
             alt="Login illustration"
-            style={{ borderRadius: '10px' }}
+            style={{ borderRadius: '10px', marginTop:'29px' }}
           />
         </MDBCol>
 
