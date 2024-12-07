@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 
-function Filtering({ onFilterChange }) {
+function Filtering({ onFilterChange, categories }) {
     const [selectedFilters, setSelectedFilters] = useState({
         categories: [],
-        difficulty: [],
     });
-
-    const categories = ["Science", "History", "Geography", "Entertainment"];
-    const difficulties = ["Easy", "Medium", "Hard"];
 
     const handleCheckboxChange = (type, value) => {
         setSelectedFilters((prevFilters) => {
@@ -27,8 +23,6 @@ function Filtering({ onFilterChange }) {
 
     return (
         <div className="filtering">
-
-            {/* Categories Filter */}
             <div>
                 <h4>Categories</h4>
                 {categories.map((category) => (
@@ -44,8 +38,6 @@ function Filtering({ onFilterChange }) {
                     </div>
                 ))}
             </div>
-
-          
         </div>
     );
 }

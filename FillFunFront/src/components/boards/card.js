@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 function Card({ board }) {
     const [isFavorite, setIsFavorite] = useState(false);
-    const navigate = useNavigate();  // Hook for navigation
+    const navigate = useNavigate();
 
     const handlePlayNow = () => {
         navigate('/quiz', { state: { questions: board.questions } });
@@ -42,8 +42,7 @@ function Card({ board }) {
     };    
 
     return (
-        <div className="card" style={{ width: "18rem", position: "relative" }}>
-            {/* Favorite Icon */}
+        <div className="card" style={{ width: "15rem", position: "relative" }}>
             <button
                 type="button"
                 className={`btn btn-link p-0 position-absolute top-0 end-0 m-2 ${isFavorite ? "text-danger" : "text-muted"}`}

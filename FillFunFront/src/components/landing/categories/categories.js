@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Array of category icons
 const categoryIcons = [
     { name: 'Geography', icon: 'bi-map' },
     { name: 'Entertainment: Music', icon: 'bi-music-note' },
@@ -12,7 +11,6 @@ const categoryIcons = [
     { name: 'Science: Mathematics', icon: 'bi-calculator' },
     { name: 'Mythology', icon: 'bi-lightning' },
     { name: 'Sports', icon: 'bi-trophy' },
-    { name: 'Geography', icon: 'bi-map' },
     { name: 'History', icon: 'bi-clock-history' },
     { name: 'Politics', icon: 'bi-person-lines-fill' },
     { name: 'Art', icon: 'bi-brush' },
@@ -32,9 +30,8 @@ const LandingPage = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch('/trivia_boards.json');
+                const response = await fetch('data/trivia_boards.json');
                 const data = await response.json();
-                
 
                 const categoriesWithIcons = data.map(category => {
                     const matchingIcon = categoryIcons.find(icon => icon.name === category.category);
@@ -52,22 +49,19 @@ const LandingPage = () => {
         fetchCategories();
     }, []);
 
-    const handleCardClick = (categoryId) => {
-        navigate(`/category/${categoryId}`);
+    const handleCardClick = (category) => {
+        navigate('/boards', { state: { category } });
     };
 
     return (
-        
         <div className="max-w-4xl mx-auto p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <section id="features" className="features section">
-                {/* Section Title */}
-                <div className="container section-title" data-aos="fade-up">
-                    <div>
-                        <span className="description-title">Categories</span>
+                    <div className="container section-title" data-aos="fade-up">
+                        <div>
+                            <span className="description-title">Categories</span>
+                        </div>
                     </div>
-                </div>
-                {/* End Section Title */}
                     <div className="container">
                         <div className="row gy-4">
                             {categories.map((category) => (
@@ -76,12 +70,12 @@ const LandingPage = () => {
                                     className="col-lg-3 col-md-4"
                                     data-aos="fade-up"
                                     data-aos-delay={100}
-                                    onClick={() => handleCardClick(category.board_id)}
+                                    onClick={() => handleCardClick(category.category)}
                                 >
                                     <div className="features-item">
                                         <i className={`bi ${category.icon}`} style={{ color: "#ffbb2c" }} />
                                         <h3>
-                                            <a href="#" className="stretched-link">
+                                            <a href="" className="stretched-link">
                                                 {category.category}
                                             </a>
                                         </h3>
