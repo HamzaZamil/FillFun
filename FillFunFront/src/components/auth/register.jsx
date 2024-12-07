@@ -7,6 +7,7 @@ import {
   MDBInput,
 } from 'mdb-react-ui-kit';
 import axiosInstance from '../../api/axiosInstance';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -70,7 +71,7 @@ const Register = () => {
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
             className="img-fluid"
             alt="Register illustration"
-            style={{ borderRadius: '10px' }}
+            style={{ borderRadius: '10px', marginTop:'120px' }}
           />
         </MDBCol>
 
@@ -145,9 +146,9 @@ const Register = () => {
               </button>
               <p className="small mt-3">
                 Already have an account?{' '}
-                <a href="#!" className="link-danger">
+                <Link to="/login" className="link-danger">
                   Login
-                </a>
+                </Link>
               </p>
             </div>
           </form>

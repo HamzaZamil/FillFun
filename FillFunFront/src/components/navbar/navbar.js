@@ -1,92 +1,137 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo_white.png";
-import { useLocation } from "react-router-dom";
 
 function Navbar() {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [isDeepDropdownOpen, setDeepDropdownOpen] = useState(false);
-    const [isScrolled, setScrolled] = useState(false);
-    const [isMobileNavActive, setMobileNavActive] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isScrolled, setScrolled] = useState(false);
+  const [isMobileNavActive, setMobileNavActive] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const location = useLocation();
-    const isQuizPage = location.pathname === '/quiz';
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isQuizPage = location.pathname === "/quiz";
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+  useEffect(() => {
+    // Check if a token exists in local storage
+    const token = localStorage.getItem("authToken");
+    setIsLoggedIn(!!token);
 
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const toggleMobileNav = () => {
-        setMobileNavActive((prevState) => !prevState);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
     };
 
-    const toggleDropdown = (e) => {
-        e.preventDefault();
-        setDropdownOpen((prevState) => !prevState);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
-    const toggleDeepDropdown = (e) => {
-        e.preventDefault();
-        setDeepDropdownOpen((prevState) => !prevState);
-    };
+  const toggleDropdown = (e) => {
+    e.preventDefault();
+    setDropdownOpen((prevState) => !prevState);
+  };
 
-    return (
-        <>
+  const handleLogout = () => {
+    localStorage.removeItem("authToken"); // Remove token
+    setIsLoggedIn(false); // Update state
+    navigate("/login"); // Redirect to login page
+  };
 
-            <header
-                id="header"
-                style={{
-                    backgroundColor: isQuizPage
-                        ? '#10058c'
-                        : isScrolled
-                            ? '#10058c'
-                            : 'transparent',
-                }}
-                className={`header d-flex align-items-center fixed-top ${isScrolled ? 'scrolled' : ''}`}
-            >
-                <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-                    <a href="/" className="logo d-flex align-items-center">
-                        <img src={Logo} alt="Logo" />
-                    </a>
+  return (
+    <header
+      id="header"
+      style={{
+        backgroundColor: isQuizPage
+          ? "#10058c"
+          : isScrolled
+          ? "#10058c"
+          : "transparent",
+      }}
+      className={`header d-flex align-items-center fixed-top ${
+        isScrolled ? "scrolled" : ""
+      }`}
+    >
+      <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <a href="/" className="logo d-flex align-items-center">
+          <img src={Logo} alt="Logo" />
+        </a>
 
-                    <nav id="navmenu" className={`navmenu ${isMobileNavActive ? 'mobile-nav-active' : ''}`}>
-                        <ul>
-                            <li>
-                                <a href="/" className="active">Home</a>
-                            </li>
-
-                            {/* <li>
-                                <a href="/#about">Profile</a>
-                            </li>
-                            */
-
-                            }
-                            <li>
-                                <a href="/boards">Boards</a>
-                            </li>
-                            <li><a href="/#contact">Contact</a></li>
-                            <li><a href="/wishlist"><i className="bi bi-heart-fill fs-6"></i></a></li>
-                            <li><a href="/wishlist"><i class="bi bi-person"></i></a></li>
-                        </ul>
-                        {/* Mobile Navigation Toggle */}
-                        <button className="mobile-nav-toggle d-xl-none" onClick={toggleMobileNav}>
-                            <i className={`bi ${isMobileNavActive ? 'bi-x' : 'bi-list'}`}></i>
+        <nav
+          id="navmenu"
+          className={`navmenu ${isMobileNavActive ? "mobile-nav-active" : ""}`}
+        >
+          <ul>
+            <li>
+              <a href="/" className="active">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/boards">Boards</a>
+            </li>
+            <li>
+              <a href="/#contact">Contact</a>
+            </li>
+            <li>
+              <a href="/wishlist">
+                <i className="bi bi-heart-fill fs-6"></i>
+              </a>
+            </li>
+            {/* Dropdown for Profile/Account */}
+            <li className="dropdown">
+              <a
+                href="#"
+                className="dropdown-toggle"
+                onClick={toggleDropdown}
+              >
+                <i className="bi bi-person" style={{fontSize:'1.35rem'}}></i>
+              </a>
+              {isDropdownOpen && (
+                <ul className="dropdown-menu">
+                  {isLoggedIn ? (
+                    <>
+                      <li>
+                        <a href="/profile" className="dropdown-item">
+                          Profile
+                        </a>
+                      </li>
+                      <li>
+                        <button
+                          className="dropdown-item"
+                          onClick={handleLogout}
+                        >
+                          Logout
                         </button>
-                    </nav>
-                </div>
-            </header>
-        </>
-    );
+                      </li>
+                    </>
+                  ) : (
+                    <li>
+                      <a
+                        href="/login"
+                        className="dropdown-item"
+                        onClick={() => setDropdownOpen(false)}
+                      >
+                        Login
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              )}
+            </li>
+          </ul>
+
+          {/* Mobile Navigation Toggle */}
+          <button
+            className="mobile-nav-toggle d-xl-none"
+            onClick={() => setMobileNavActive((prevState) => !prevState)}
+          >
+            <i className={`bi ${isMobileNavActive ? "bi-x" : "bi-list"}`}></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
 export default Navbar;

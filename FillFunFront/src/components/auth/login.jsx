@@ -9,6 +9,7 @@ import {
   MDBCheckbox,
 } from 'mdb-react-ui-kit';
 import "../../index.css";
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -45,6 +46,7 @@ const Login = () => {
       setServerMessage(response.data.message);
       if (response.data.token) {
         localStorage.setItem('authToken', response.data.token);
+        navigate('/');
       }
     } catch (error) {
       const serverErrors = error.response?.data?.errors || {};
@@ -54,6 +56,7 @@ const Login = () => {
       );
     }
   };
+  const navigate = useNavigate();
 
   return (
     <MDBContainer
@@ -114,9 +117,7 @@ const Login = () => {
                 id="flexCheckDefault"
                 label="Remember me"
               />
-              <a href="#!" className="small">
-                Forgot password?
-              </a>
+             
             </div>
 
             <div className="text-center mt-3">
@@ -128,9 +129,9 @@ const Login = () => {
               </button>
               <p className="small mt-3">
                 Don't have an account?{' '}
-                <a href="#!" className="link-danger">
+                <Link to="/register" className="link-danger">
                   Register
-                </a>
+                </Link>
               </p>
             </div>
           </form>
