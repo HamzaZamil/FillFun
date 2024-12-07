@@ -89,7 +89,6 @@ function Navbar() {
                                 Boards
                             </a>
                         </li>
-
                         <li>
                             <a href="/wishlist" onClick={handleSamePageLinkClick} className={isWishlistPage ? 'active' : ''}>
                                 <i className="bi bi-heart-fill fs-6"></i>
