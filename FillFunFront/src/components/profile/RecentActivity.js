@@ -1,7 +1,7 @@
 const RecentActivity = ({ gameHistory }) => (
     <div className="col-md-9">
-      <div className="card mt-4">
-        <div className="card-header bg-info text-white text-center">
+      <div className="card">
+        <div className="card-header bg-dark text-white text-center">
           <h5 className="mb-0">Recent Activity</h5>
         </div>
         <div className="card-body">
