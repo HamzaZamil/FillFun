@@ -13,6 +13,8 @@ function Navbar() {
     const isWishlistPage = location.pathname === '/wishlist';
     const isContactPage = location.pathname === '/#contact';
     const isHomePage = location.pathname === '/';
+    const isLoginPage = location.pathname === '/login';
+    const isRegisterPage = location.pathname === '/register';
     const isNotFoundPage = location.pathname === '*';
     const [isScrolled, setScrolled] = useState(false);
 
@@ -64,7 +66,7 @@ function Navbar() {
         <header
             id="header"
             style={{
-                backgroundColor: isQuizPage || isNotFoundPage
+                backgroundColor: isQuizPage || isNotFoundPage || isRegisterPage || isLoginPage
                     ? '#10058c'
                     : isScrolled
                         ? '#10058c'
