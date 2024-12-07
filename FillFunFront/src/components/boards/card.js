@@ -63,7 +63,7 @@ function Card({ board }) {
                 <i className={`bi ${isFavorite ? "bi-heart-fill" : "bi-heart"}`}></i>
             </button>
 
-            <img className="card-img-top" src={board.image} alt="Card cap" />
+            <img className="card-img-top" src={board.image} alt="Card cap" height={200} />
             <div className="card-body">
                 <h5 className="card-title">{board.name}</h5>
                 <p className="card-text">
