@@ -43,14 +43,11 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://c8.alamy.com/comp/K179PN/explorer-world-globe-character-cartoon-K179PN.jpg"
     },
     {
         "board_id": 2,
         "category": "Entertainment: Music",
-        "name": "Music Maestro",
-        "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
-        "number_of_questions": 8,
         "name": "Music Maestro",
         "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
         "number_of_questions": 8,
@@ -144,7 +141,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://png.pngtree.com/png-vector/20240801/ourlarge/pngtree-cartoon-male-orchestra-director-png-image_13056643.png"
     },
     {
         "board_id": 3,
@@ -166,7 +163,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://media.istockphoto.com/id/693210524/vector/pop-art-style-comics-panel-gossip-girl-whispering-secret-in-ear-word-of-mouth-vector.jpg?s=612x612&w=0&k=20&c=4YeSgU2oo9qW6tObPktTy_bW0L8RZKRw4X7B3YPi5pk="
     },
     {
         "board_id": 4,
@@ -224,7 +221,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://media.istockphoto.com/id/1094602572/vector/time-machine.jpg?s=612x612&w=0&k=20&c=EUIPzDujKyD6D9-XcPBV9LOivIeoRbjjA9MEXy6dfaA="
     },
     {
         "board_id": 5,
@@ -342,7 +339,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://img.freepik.com/premium-photo/eerily-realistic-3d-animation-boy-blocks-mosaicinspired-pixel-perfect-cartoon_899449-375841.jpg"
     },
     {
         "board_id": 6,
@@ -398,7 +395,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://media.licdn.com/dms/image/v2/C4E0BAQGViODTU3fn-w/company-logo_200_200/company-logo_200_200/0/1649162499397/team_tech_titans_logo?e=2147483647&v=beta&t=1NZhpNSasNsvkkVvvpVFh66C70AvcH98k9doVYrEI30"
     },
     {
         "board_id": 7,
@@ -430,7 +427,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://img.freepik.com/premium-vector/happy-children-playing-sports-outdoors-cartoon-style_657438-34747.jpg"
     },
     {
         "board_id": 8,
@@ -474,7 +471,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://thumbs.dreamstime.com/b/cartoon-cinema-building-vector-modern-exterior-facade-urban-architecture-flat-design-style-illustration-88982586.jpg"
     },
     {
         "board_id": 9,
@@ -496,7 +493,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://marketplace.canva.com/EAF7iUA9Uhs/1/0/1600w/canva-colorful-festive-retro-superhero-comic-strip-bqnFhYQ96iY.jpg"
     },
     {
         "board_id": 10,
@@ -542,7 +539,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:350/h:350/q:75/rt:fill/g:ce/https://bleedingcool.com/wp-content/uploads/2023/02/diary-of-a-nature-nerd-350x350.jpg"
     },
     {
         "board_id": 11,
@@ -564,7 +561,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://img.freepik.com/premium-photo/cartoon-digital-avatars-auto-aficionado-holding-clipboard-checking-off-items-car_216520-94300.jpg?w=360"
     },
     {
         "board_id": 12,
@@ -584,7 +581,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://cartoonresearch.com/wp-content/uploads/2024/06/Wizard-Arts-344.jpg"
     },
     {
         "board_id": 13,
@@ -604,9 +601,77 @@
                     "2016",
                     "2015"
                 ]
+            },
+            {
+                "type": "multiple",
+                "difficulty": "medium",
+                "category": "Entertainment: Television",
+                "question": "In *Grey's Anatomy*, which hospital do the characters primarily work at?",
+                "correct_answer": "Seattle Grace Hospital",
+                "incorrect_answers": [
+                    "Presbyterian Hospital",
+                    "Mercy West Hospital",
+                    "St. Mary's Hospital"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Television",
+                "question": "Raymond 'Red' Reddington is a former Navy officer in *The Blacklist*.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "multiple",
+                "difficulty": "medium",
+                "category": "Entertainment: Television",
+                "question": "What supernatural ability does Elena Gilbert NOT have in *The Vampire Diaries*?",
+                "correct_answer": "Shapeshifting",
+                "incorrect_answers": [
+                    "Heightened senses",
+                    "Immortality",
+                    "Compulsion"
+                ]
+            },
+            {
+                "type": "multiple",
+                "difficulty": "hard",
+                "category": "Entertainment: Television",
+                "question": "What is the name of the powerful family central to *The Originals*?",
+                "correct_answer": "The Mikaelsons",
+                "incorrect_answers": [
+                    "The Salvatore Brothers",
+                    "The Petrovas",
+                    "The Lockwoods"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Television",
+                "question": "In *Grey's Anatomy*, Derek Shepherd is also known as 'McDreamy'.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "multiple",
+                "difficulty": "medium",
+                "category": "Entertainment: Television",
+                "question": "What is the secret behind Raymond Reddington's knowledge of the criminal underworld in *The Blacklist*?",
+                "correct_answer": "He's a former criminal mastermind.",
+                "incorrect_answers": [
+                    "He's an undercover FBI agent.",
+                    "He's a journalist investigating crime.",
+                    "He's a retired detective."
+                ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDL9_ENGeUDV5QbUAYxxlt_PIG3js3KoZa4Q&s"
     },
     {
         "board_id": 14,
@@ -628,7 +693,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzEgPz4O7rFNKZfnPiaYr9_AC0_BkR9f8rcw&s"
     },
     {
         "board_id": 15,
@@ -648,7 +713,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTjiuhdUEuLntoaivqfwU8rK-Ci7o88pmVDQ&s"
     },
     {
         "board_id": 16,
@@ -670,7 +735,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://img.freepik.com/premium-photo/man-artist-2d-cartoon-illustraton-white-background-high_889056-26894.jpg"
     },
     {
         "board_id": 17,
@@ -726,7 +791,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://thumbs.dreamstime.com/b/characters-answer-test-question-intellect-show-gaming-cartoon-man-woman-pressing-button-answering-quiz-questions-game-118076003.jpg"
     },
     {
         "board_id": 18,
@@ -748,7 +813,7 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://thumbs.dreamstime.com/b/set-cartoon-people-reading-books-different-age-vector-illustration-52609442.jpg"
     },
     {
         "board_id": 19,
@@ -770,6 +835,6 @@
                 ]
             }
         ],
-        "image": "https://via.placeholder.com/150"
+        "image": "https://i.pinimg.com/736x/55/27/5b/55275b315345a2523f329ab5e358d105.jpg"
     }
 ]
