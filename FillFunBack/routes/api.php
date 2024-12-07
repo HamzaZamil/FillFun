@@ -22,6 +22,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // Wishlist routes
     Route::post('/wishlist/toggle', [BoardController::class, 'toggleWishlist']);
     Route::get('/wishlist', [BoardController::class, 'getWishlist']);
+    Route::get('/wishlist/isInWishlist', [BoardController::class, 'isInWishlist']);
     
     // History routes
     Route::post('/board/addToHistory', [BoardController::class, 'addToHistory']);

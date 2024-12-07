@@ -1,12 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
 import Swal from 'sweetalert2';
 
-
 function Card({ board }) {
     const [isFavorite, setIsFavorite] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Check if the board is in the wishlist when the component mounts
+        const checkIfFavorite = async () => {
+            const userId = localStorage.getItem('user_id');
+            
+            if (!userId) {
+                return; // No need to check if the user isn't logged in
+            }
+
+            try {
+                const response = await axiosInstance.get('/wishlist/isInWishlist', {
+                    params: {
+                        user_id: userId,
+                        board_id: board.id,
+                    },
+                });
+
+                if (response.status === 200) {
+                    setIsFavorite(response.data.isFavorite);
+                }
+            } catch (error) {
+                console.error('Error checking wishlist status:', error);
+            }
+        };
+
+        checkIfFavorite();
+    }, [board.id]);
 
     const handlePlayNow = () => {
         const userId = localStorage.getItem('user_id');
@@ -15,7 +42,7 @@ function Card({ board }) {
             Swal.fire({
                 icon: 'error',
                 title: 'Must Login',
-                text: 'Please log first to play.'
+                text: 'Please log in first to play.',
             });
             return;
         }
@@ -42,9 +69,18 @@ function Card({ board }) {
 
             if (response.status === 200) {
                 setIsFavorite(false);
-            }
-            if (response.status === 201) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Removed from Favorites',
+                    text: 'Board has been removed from your favorites.',
+                });
+            } else if (response.status === 201) {
                 setIsFavorite(true);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Added to Favorites',
+                    text: 'Board has been added to your favorites.',
+                });
             }
         } catch (error) {
             Swal.fire({

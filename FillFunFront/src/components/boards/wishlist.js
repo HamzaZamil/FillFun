@@ -41,7 +41,7 @@ function Wishlist() {
       // Extract the nested `board` objects
       const wishlistData = response.data.boards.map((item) => item.board);
 
-      setWishlist(wishlistData); // Set the extracted `board` objects as the wishlist
+      setWishlist(wishlistData);
       console.log("Wishlist fetched:", wishlistData);
       setIsLoggedIn(true);
     } catch (error) {
@@ -93,7 +93,7 @@ function Wishlist() {
           {isLoggedIn ? (
             <div
               className="d-flex justify-content-center align-items-center flex-wrap"
-              style={{ minHeight: "60vh" }}
+              style={{ minHeight: "60vh", gap: "30px" }}
             >
               {wishlist.length > 0 ? (
                 wishlist.map((board) => <Card key={board.id} board={board} />)
