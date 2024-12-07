@@ -90,16 +90,7 @@ function Navbar() {
                             </a>
                         </li>
                         <li>
-<<<<<<< HEAD
-                            <a href="/wishlist" onClick={handleSamePageLinkClick}>
-=======
-                            <a href="/#contact" onClick={handleSamePageLinkClick} className={isContactPage ? 'active' : ''}>
-                                Contact
-                            </a>
-                        </li>
-                        <li>
                             <a href="/wishlist" onClick={handleSamePageLinkClick} className={isWishlistPage ? 'active' : ''}>
->>>>>>> 28b9f9ed721285f3bae6c082fa599dae598aa723
                                 <i className="bi bi-heart-fill fs-6"></i>
                             </a>
                         </li>

@@ -50,12 +50,11 @@ function Quiz() {
       }
 
       const response = await axiosInstance.post(`/board/addToHistory`, {
-        params: {
-          user_id: userId
-          , score: score
-          , board_id: board.board_id
-        },
-      });
+          user_id: userId,
+          board_id: board.id,
+          score: score 
+        }
+      );
 
     } catch (error) {
       Swal.fire({
