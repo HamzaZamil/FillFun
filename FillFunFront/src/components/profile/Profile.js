@@ -4,6 +4,7 @@ import ProfileSidebar from "./ProfileSidebar";
 import ProfileContent from "./ProfileContent";
 import RecentActivity from "./RecentActivity";
 import EditProfile from "./EditProfile";
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState({
@@ -16,7 +17,7 @@ const ProfilePage = () => {
   const [view, setView] = useState("profile"); // profile, recentActivity, editProfile
 
   useEffect(() => {
-    const userId = 1; // Replace with dynamic user ID
+    const userId = localStorage.getItem('user_id');
 
     axiosInstance
       .get(`/profile/${userId}`)
@@ -35,7 +36,7 @@ const ProfilePage = () => {
   }, []);
 
   const fetchGameHistory = () => {
-    const userId = 1; // Replace with dynamic user ID
+    const userId = localStorage.getItem('user_id');
 
     axiosInstance
       .get(`/board/getHistory`, {
@@ -60,34 +61,25 @@ const ProfilePage = () => {
     setView("editProfile"); // Show edit profile form
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setProfile((prevProfile) => ({
-      ...prevProfile,
-      [name]: value,
-    }));
-  };
-
-  const handleSaveProfile = (e) => {
-    e.preventDefault();
-    const userId = 1; // Replace with dynamic user ID
+  const handleSaveProfile = (updatedProfile) => {
+    const userId = localStorage.getItem('user_id'); // Replace with dynamic user ID
 
     // Prepare the data to send to the server
-    const updatedProfile = {
-      name: profile.name,
-      email: profile.email,
-      password: profile.password,
-      password_confirmation: profile.confirmPassword
+    const dataToUpdate = {
+      name: updatedProfile.name,
+      email: updatedProfile.email,
+      password: updatedProfile.password,
+      password_confirmation: updatedProfile.confirmPassword
     };
 
     // Only include the password if it has been changed
-    if (profile.password === "********") {
-      delete updatedProfile.password;
-      delete updatedProfile.password_confirmation;
+    if (updatedProfile.password === "********") {
+      delete dataToUpdate.password;
+      delete dataToUpdate.password_confirmation;
     }
 
     axiosInstance
-      .put(`/users/${userId}`, updatedProfile)
+      .put(`/users/${userId}`, dataToUpdate)
       .then((response) => {
         const user = response.data.user;
         setProfile({
@@ -97,6 +89,14 @@ const ProfilePage = () => {
           confirmPassword: "********" // Mask password for security
         });
         setView("profile"); // Show profile after saving
+
+        // Show SweetAlert2
+        Swal.fire({
+          icon: 'success',
+          title: 'Profile Updated',
+          text: 'Your profile has been updated successfully.',
+          confirmButtonText: 'OK'
+        });
       })
       .catch((error) => {
         console.error("Error saving profile data:", error);
@@ -121,7 +121,7 @@ const ProfilePage = () => {
           </div>
         </nav>
       </div>
-      <div className="container mt-4">
+      <div className="container my-4">
         <div className="row">
           <ProfileSidebar
             name={profile.name}
@@ -135,7 +135,6 @@ const ProfilePage = () => {
           ) : view === "editProfile" ? (
             <EditProfile
               profile={profile}
-              onChange={handleInputChange}
               onSave={handleSaveProfile}
             />
           ) : (
