@@ -5,7 +5,6 @@ import Logo from "../../assets/logo_white.png";
 function Navbar() {
     const [isMobileNavActive, setMobileNavActive] = useState(false);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [isScrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
 
     const location = useLocation();
