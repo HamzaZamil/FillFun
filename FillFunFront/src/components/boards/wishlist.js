@@ -67,7 +67,7 @@ function Wishlist() {
 
   return (
     <>
-      <div className="page-title dark-background" data-aos="fade">
+      <div className="page-title dark-background">
         <div className="heading">
           <div className="container">
             <div className="row d-flex justify-content-center text-center">
