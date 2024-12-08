@@ -1,0 +1,44 @@
+.board-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 250px !important;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: #fff;
+}
+
+.board-card .heart-button-wrapper {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+    border-radius: 6px;
+    text-shadow: 0 0 10px 2px #ff0000;
+}
+
+.board-card .btn-link {
+    color: inherit;
+}
+
+.board-card .card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.board-card .card-title,
+.board-card .card-text {
+    margin: 0.5rem 0;
+}
+
+.board-card .btn-primary {
+    margin-top: auto;
+}

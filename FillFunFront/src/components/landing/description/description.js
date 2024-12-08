@@ -44,7 +44,7 @@ function description() {
                             data-aos="zoom-out"
                             data-aos-delay={200}
                         >
-                            <img src={Detail2} className="img-fluid img-circle" alt="" />
+                            <img src={Detail2} className="img-fluid img-circle" alt="" style={{ borderRadius: "15px", height: "300px" }} />
                         </div>
                         <div
                             className="col-md-7 order-2 order-md-1"

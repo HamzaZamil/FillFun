@@ -1,66 +1,75 @@
-import './question.css';
-import React, { useState, useEffect, useRef } from 'react';
+import "./question.css";
+import React, { useState, useEffect, useRef } from "react";
 
 function Question({ question, setScore, lock, setlock }) {
-    const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState([]);
 
-    const Option1 = useRef(null);
-    const Option2 = useRef(null);
-    const Option3 = useRef(null);
-    const Option4 = useRef(null);
+  const Option1 = useRef(null);
+  const Option2 = useRef(null);
+  const Option3 = useRef(null);
+  const Option4 = useRef(null);
 
-    let optionArr = [Option1, Option2, Option3, Option4];
+  let optionArr = [Option1, Option2, Option3, Option4];
 
-    const shuffle = (array) => array.sort(() => Math.random() - 0.5);
+  const shuffle = (array) => array.sort(() => Math.random() - 0.5);
 
-    useEffect(() => {
-        const shuffledAnswers = shuffle([
-            question.correct_answer,
-            ...question.incorrect_answers,
-        ]);
-        setAnswers(shuffledAnswers);
+  useEffect(() => {
+    const shuffledAnswers = shuffle([
+      question.correct_answer,
+      ...question.incorrect_answers,
+    ]);
+    setAnswers(shuffledAnswers);
 
-        const listItems = document.querySelectorAll('.list-group-item');
-        listItems.forEach((item) => {
-            item.classList.remove('correct', 'wrong');
-        });
-    }, [question]);
+    // Clear any previous classes for correct or wrong answers
+    const listItems = document.querySelectorAll(".funky-option");
+    listItems.forEach((item) => {
+      item.classList.remove(
+        "correct",
+        "wrong",
+        "animate-correct",
+        "animate-wrong"
+      );
+    });
 
-    const checkAnswer = (e, answer) => {
-        if (lock === false) {
-            if (answer === question.correct_answer) {
-                e.target.classList.add('correct');
-                setScore((prevScore) => prevScore + 1);
-                setlock(true);
-            } else {
-                e.target.classList.add('wrong');
-                setlock(true);
-                optionArr[answers.indexOf(question.correct_answer)].current.classList.add('correct');
-            }
-        }
-    };
+    // Unlock the question for the user to answer
+    setlock(false);
+  }, [question, setlock]);
 
-    return (
-        <div className="container mt-4">
-            <div className="card text-center">
-                <div className="card-header bold">{question.question}</div>
-                <div className="card-body">
-                    <ul className="list-group">
-                        {answers.map((answer, index) => (
-                            <li
-                                key={index}
-                                className="list-group-item"
-                                onClick={(e) => checkAnswer(e, answer)}
-                                ref={optionArr[index]}
-                            >
-                                {answer}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+  const checkAnswer = (e, answer) => {
+    if (lock === false) {
+      if (answer === question.correct_answer) {
+        e.target.classList.add("correct", "animate-correct");
+        setScore((prevScore) => prevScore + 1);
+        setlock(true);
+      } else {
+        e.target.classList.add("wrong", "animate-wrong");
+        setlock(true);
+        optionArr[
+          answers.indexOf(question.correct_answer)
+        ].current.classList.add("correct", "animate-correct");
+      }
+    }
+  };
+
+  return (
+    <div className="funky-container">
+      <div className="funky-card">
+        <div className="funky-question">{question.question}</div>
+        <div className="funky-options">
+          {answers.map((answer, index) => (
+            <div
+              key={index}
+              className="funky-option"
+              onClick={(e) => checkAnswer(e, answer)}
+              ref={optionArr[index]}
+            >
+              {answer}
             </div>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Question;
