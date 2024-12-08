@@ -11,8 +11,6 @@ function Landing() {
         <Categrories />
         <Desc />
         <Contact />
-        <About />
-
     </>;
 }
 
