@@ -17,12 +17,7 @@
     padding: 20px;
     text-align: center;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    transform: rotate(-2deg);
     transition: transform 0.3s;
-}
-
-.funky-card:hover {
-    transform: rotate(0deg) scale(1.02);
 }
 
 /* Question Styling */
