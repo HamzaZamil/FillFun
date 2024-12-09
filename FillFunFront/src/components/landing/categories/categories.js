@@ -11,7 +11,11 @@ const categoryIcons = [
     { name: 'History', icon: 'bi-clock-history' },
     { name: 'Art', icon: 'bi-brush' },
     { name: 'Vehicles', icon: 'bi-truck' },
+
     { name: 'General Knowledge', icon: 'bi-lightbulb' },
+
+
+
 ];
 
 
@@ -19,15 +23,13 @@ const LandingPage = () => {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
 
-    
-    
-
     useEffect(() => {
         // const fetchCategories = async () => {
         
         //     const response = await fetch('data/trivia_boards.json');
         //     const data = await response.json();
         //     // console.log(data);
+
 
         //     data.map(category => {
         //         console.log("id:"+category.id+" "+category.category+" "+category.name+" \""+category.description+"\" "+" number_of_questions:"+category.number_of_questions);
@@ -39,6 +41,7 @@ const LandingPage = () => {
                 icon: category.icon || 'bi-question-circle',
             }));
             setCategories(categoriesWithIcons);
+
         };
 
         fetchCategories();
