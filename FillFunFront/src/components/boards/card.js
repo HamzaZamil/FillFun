@@ -91,11 +91,11 @@ function Card({ board }) {
         <button
           type="button"
           className={`btn btn-link p-0 ${isFavorite ? "text-danger" : "text-muted"
-            }`}
+            } p-1 border rounded shadow-lg bg-white bg-opacity-75`}
           onClick={toggleFavorite}
           aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
-          <i className={`bi ${isFavorite ? "bi-heart-fill" : "bi-heart"}`}></i>
+          <i className={`bi ${isFavorite ? "bi-heart-fill" : "bi-heart"}` }></i>
         </button>
       </div>
 
