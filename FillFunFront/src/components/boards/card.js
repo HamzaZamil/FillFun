@@ -4,6 +4,7 @@ import axiosInstance from "../../api/axiosInstance";
 import Swal from "sweetalert2";
 import "./card.css";
 
+
 function Card({ board }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const navigate = useNavigate();
@@ -11,7 +12,9 @@ function Card({ board }) {
   useEffect(() => {
     const checkIfFavorite = async () => {
       const userId = localStorage.getItem("user_id");
-      if (!userId) return;
+      if (!userId) {
+        return;
+      }
 
       try {
         const response = await axiosInstance.get("/wishlist/isInWishlist", {
@@ -31,6 +34,7 @@ function Card({ board }) {
     checkIfFavorite();
   }, [board.id]);
 
+
   const handlePlayNow = () => {
     const userId = localStorage.getItem("user_id");
     if (!userId) {
@@ -38,6 +42,8 @@ function Card({ board }) {
         icon: "error",
         title: "Must Login",
         text: "Please log in first to play.",
+      }).then(() => {
+        navigate('/login');
       });
       return;
     }
@@ -45,17 +51,19 @@ function Card({ board }) {
   };
 
   const toggleFavorite = async () => {
-    try {
-      const userId = localStorage.getItem("user_id");
-      if (!userId) {
-        Swal.fire({
-          icon: "error",
-          title: "Must Login",
-          text: "Please log in to add to favorites.",
-        });
-        return;
-      }
+    const userId = localStorage.getItem("user_id");
+    if (!userId) {
+      Swal.fire({
+        icon: "error",
+        title: "Must Login",
+        text: "Please log in to add to favorites.",
+      }).then(() => {
+        navigate('/login');
+      });
+      return;
+    }
 
+    try {
       const response = await axiosInstance.post("/wishlist/toggle", {
         board_id: board.id,
         user_id: userId,
@@ -84,6 +92,7 @@ function Card({ board }) {
       });
     }
   };
+
 
   return (
     <div className="board-card" style={{ width: "18rem", borderRadius: "5px" }}>

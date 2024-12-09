@@ -5,6 +5,10 @@ import './question.css';
 import confetti from "canvas-confetti";
 import axiosInstance from "../../api/axiosInstance";
 import Swal from "sweetalert2";
+import Bubbles from '../../bubbles/bubbles';
+import Perfect from '../../assets/perfect.gif';
+import Better from '../../assets/better.gif';
+import Bad from '../../assets/bad.gif';
 
 
 function Quiz() {
@@ -100,17 +104,36 @@ function Quiz() {
     return (
       <>
 
-        <div className="section container m-5">
+        <div className="section container mt-5">
           <div className="quiz-header text-center">
             <div className="container mt-4">
-              <div className="card text-center">
-                <div className="card-header bold">Well Done</div>
-                <div className="card-body">
-                  <h1>Your score is {score} / {questions.length}</h1>
-                  {score === questions.length && (
-                    <h2 className="text-success">Perfect Score! 🎉</h2>
+              <div className="card shadow-lg border-0 rounded">
+                <div className="card-body p-4">
+                  <h1 className="display-4 mb-3">
+                    Your score is <span className="text-primary">{score}</span> / {questions.length}
+                  </h1>
+                  {score === questions.length ? (
+                    <h2 className="text-success fw-bold">Perfect Score! 🎉</h2>
+                  ) : score >= questions.length / 2 ? (
+                    <h2 className="text-warning fw-bold">Good Job!</h2>
+                  ) : (
+                    <h2 className="text-danger fw-bold">Better Luck Next Time! 😞</h2>
                   )}
-                  <a href="/boards" className="btn btn-primary">
+                  <div className="my-4">
+                    <img
+                      src={
+                        score === questions.length
+                          ? Perfect
+                          : score >= questions.length / 2
+                            ? Better
+                            : Bad
+                      }
+                      alt="Result Feedback"
+                      className="img-fluid"
+                      style={{ maxWidth: "200px", height: "auto" }}
+                    />
+                  </div>
+                  <a href="/boards" className="btn btn-primary btn-lg">
                     Go Back
                   </a>
                 </div>
@@ -118,6 +141,8 @@ function Quiz() {
             </div>
           </div>
         </div>
+
+
       </>
     );
   }
@@ -125,13 +150,18 @@ function Quiz() {
   return (
     <>
 
+      <div className="section container m-5" style={{ backgroundColor: "transparent" }}>
 
-      <div className="section container m-5">
-
-
+        <Bubbles />
         <div className="quiz-header text-center">
-          <p className="bold" style={{ fontFamily: "Comic Sans MS, cursive, sans-serif", fontSize: '2.3em' }}>
-            Question {currentIndex + 1} of {questions.length}
+          <p
+            className="bold"
+            style={{
+              fontFamily: "Comic Sans MS, cursive, sans-serif",
+              fontSize: '2.3em',
+              textShadow: '0px 0px 3px white, 0px 0px 5px white'
+            }}
+          >            Question {currentIndex + 1} of {questions.length}
           </p>
         </div>
 
@@ -165,6 +195,7 @@ function Quiz() {
           </button>
         </div>
       </div>
+
     </>
   );
 }

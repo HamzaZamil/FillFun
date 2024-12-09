@@ -12,27 +12,30 @@ const categoryIcons = [
     { name: 'Art', icon: 'bi-brush' },
     { name: 'Celebrities', icon: 'bi-star' },
     { name: 'Vehicles', icon: 'bi-truck' },
-    { name: 'Science: Gadgets', icon: 'bi-tools' },
-   
+
 ];
 
 const LandingPage = () => {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
-
     useEffect(() => {
         const fetchCategories = async () => {
             try {
                 const response = await fetch('data/trivia_boards.json');
                 const data = await response.json();
 
-                const categoriesWithIcons = data.map(category => {
-                    const matchingIcon = categoryIcons.find(icon => icon.name === category.category);
+                const uniqueCategories = Array.from(
+                    new Set(data.map(category => category.category))
+                );
+
+                const categoriesWithIcons = uniqueCategories.map(category => {
+                    const matchingIcon = categoryIcons.find(icon => icon.name === category);
                     return {
-                        ...category,
-                        icon: matchingIcon ? matchingIcon.icon : 'bi-question-circle'
+                        category,
+                        icon: matchingIcon ? matchingIcon.icon : 'bi-question-circle',
                     };
                 });
+
                 setCategories(categoriesWithIcons);
             } catch (err) {
                 console.error("Failed to load trivia boards:", err);
