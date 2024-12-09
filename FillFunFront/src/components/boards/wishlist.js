@@ -9,7 +9,6 @@ function Wishlist() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if the user is logged in
     const userId = localStorage.getItem("user_id");
     if (!userId) {
       setIsLoggedIn(false);
@@ -38,7 +37,6 @@ function Wishlist() {
         params: { user_id: userId },
       });
 
-      // Extract the nested `board` objects
       const wishlistData = response.data.boards.map((item) => item.board);
 
       setWishlist(wishlistData);

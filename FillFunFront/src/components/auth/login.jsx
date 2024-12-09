@@ -133,7 +133,7 @@ const Login = () => {
               </button>
               <p className="small mt-3">
                 Don't have an account?{' '}
-                <Link to="/register" className="link-danger">
+                <Link to="/register"  style={{ textDecoration: "none" }}>
                   Register
                 </Link>
               </p>

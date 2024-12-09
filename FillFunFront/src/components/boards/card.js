@@ -86,13 +86,12 @@ function Card({ board }) {
   };
 
   return (
-    <div className="board-card" style={{ width: "18rem" }}>
+    <div className="board-card" style={{ width: "18rem", borderRadius: "5px" }}>
       <div className="heart-button-wrapper">
         <button
           type="button"
-          className={`btn btn-link p-0 ${
-            isFavorite ? "text-danger" : "text-muted"
-          }`}
+          className={`btn btn-link p-0 ${isFavorite ? "text-danger" : "text-muted"
+            }`}
           onClick={toggleFavorite}
           aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
@@ -107,7 +106,7 @@ function Card({ board }) {
         height={200}
       />
       <div className="card-body d-flex flex-column justify-content-center align-items-center">
-        <h5 className="card-title text-center">{board.name}</h5>
+        <h5 className="card-title text-center" style={{ color: "#040677" }}>{board.name}</h5>
         <p className="card-text text-center">{board.description}</p>
         <button onClick={handlePlayNow} className="btn btn-primary mt-auto">
           Play Now

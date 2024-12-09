@@ -77,10 +77,19 @@ function Boards() {
                 <div className="container" data-aos="fade-up">
                     <Search handleSearch={handleSearch} />
                     <div className="row">
-                        <div className='col-md-4'>
+                        <div
+                            className="col-md-3"
+                            style={{
+                                position: 'sticky',
+                                top: '100px', 
+                                zIndex: '10',
+                                background: '#fff',
+                                height: 'fit-content', 
+                            }}                        >
                             <Filtering onFilterChange={handleFilterChange} categories={categories} />
                         </div>
-                        <div className='col-md-8'>
+
+                        <div className="col-md-9">
                             <div className="row">
                                 {filteredBoards.map((board, index) => (
                                     <div key={index} className="col-md-4 mb-4">
@@ -91,6 +100,7 @@ function Boards() {
                         </div>
                     </div>
                 </div>
+
             </section>
         </>
     );

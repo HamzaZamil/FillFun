@@ -3,24 +3,17 @@ import { useNavigate } from 'react-router-dom';
 
 const categoryIcons = [
     { name: 'Geography', icon: 'bi-map' },
-    { name: 'Entertainment: Music', icon: 'bi-music-note' },
-    { name: 'Entertainment: Film', icon: 'bi-film' },
-    { name: 'Entertainment: Books', icon: 'bi-book' },
-    { name: 'Science & Nature', icon: 'bi-tree' },
-    { name: 'Science: Computers', icon: 'bi-laptop' },
-    { name: 'Science: Mathematics', icon: 'bi-calculator' },
+    { name: 'Entertainment', icon: 'bi-music-note' },
+    { name: 'Science', icon: 'bi-tree' },
     { name: 'Mythology', icon: 'bi-lightning' },
     { name: 'Sports', icon: 'bi-trophy' },
     { name: 'History', icon: 'bi-clock-history' },
     { name: 'Politics', icon: 'bi-person-lines-fill' },
     { name: 'Art', icon: 'bi-brush' },
     { name: 'Celebrities', icon: 'bi-star' },
-    { name: 'Animals', icon: 'bi-bug' },
     { name: 'Vehicles', icon: 'bi-truck' },
-    { name: 'Entertainment: Comics', icon: 'bi-book-half' },
     { name: 'Science: Gadgets', icon: 'bi-tools' },
-    { name: 'Entertainment: Japanese Anime & Manga', icon: 'bi-file-earmark-font' },
-    { name: 'Entertainment: Cartoon & Animations', icon: 'bi-film' }
+   
 ];
 
 const LandingPage = () => {
