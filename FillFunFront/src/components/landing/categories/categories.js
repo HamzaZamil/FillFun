@@ -1,46 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const categoryIcons = [
     { name: 'Geography', icon: 'bi-map' },
-    { name: 'Entertainment', icon: 'bi-music-note' },
+    { name: 'Entertainment: Music', icon: 'bi-music-note' },
+    { name: 'Entertainment', icon: 'bi-film' },
     { name: 'Science', icon: 'bi-tree' },
-    { name: 'Mythology', icon: 'bi-lightning' },
     { name: 'Sports', icon: 'bi-trophy' },
     { name: 'History', icon: 'bi-clock-history' },
-    { name: 'Politics', icon: 'bi-person-lines-fill' },
     { name: 'Art', icon: 'bi-brush' },
-    { name: 'Celebrities', icon: 'bi-star' },
     { name: 'Vehicles', icon: 'bi-truck' },
-    { name: 'Science: Gadgets', icon: 'bi-tools' },
-   
+    { name: 'General Knowledge', icon: 'bi-lightbulb' },
 ];
+
 
 const LandingPage = () => {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const response = await fetch('data/trivia_boards.json');
-                const data = await response.json();
-
-                const categoriesWithIcons = data.map(category => {
-                    const matchingIcon = categoryIcons.find(icon => icon.name === category.category);
-                    return {
-                        ...category,
-                        icon: matchingIcon ? matchingIcon.icon : 'bi-question-circle'
-                    };
-                });
-                setCategories(categoriesWithIcons);
-            } catch (err) {
-                console.error("Failed to load trivia boards:", err);
-            }
+        const fetchCategories = () => {
+            const categoriesWithIcons = categoryIcons.map(category => ({
+                ...category,
+                icon: category.icon || 'bi-question-circle',
+            }));
+            setCategories(categoriesWithIcons);
         };
 
         fetchCategories();
     }, []);
+
 
     const handleCardClick = (category) => {
         navigate('/boards', { state: { category } });
@@ -63,13 +53,13 @@ const LandingPage = () => {
                                     className="col-lg-3 col-md-4"
                                     data-aos="fade-up"
                                     data-aos-delay={100}
-                                    onClick={() => handleCardClick(category.category)}
+                                    onClick={() => handleCardClick(category.name)}
                                 >
                                     <div className="features-item">
                                         <i className={`bi ${category.icon}`} style={{ color: "#ffbb2c" }} />
                                         <h3>
                                             <a href="" className="stretched-link">
-                                                {category.category}
+                                                {category.name}
                                             </a>
                                         </h3>
                                     </div>
