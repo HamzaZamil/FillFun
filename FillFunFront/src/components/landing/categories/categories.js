@@ -19,7 +19,20 @@ const LandingPage = () => {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
 
+    
+    
+
     useEffect(() => {
+        // const fetchCategories = async () => {
+        
+        //     const response = await fetch('data/trivia_boards.json');
+        //     const data = await response.json();
+        //     // console.log(data);
+
+        //     data.map(category => {
+        //         console.log("id:"+category.id+" "+category.category+" "+category.name+" \""+category.description+"\" "+" number_of_questions:"+category.number_of_questions);
+        //     });
+        // }
         const fetchCategories = () => {
             const categoriesWithIcons = categoryIcons.map(category => ({
                 ...category,
