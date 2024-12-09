@@ -9,7 +9,7 @@ class GameHistory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'board_id', 'score']; // Adjust fields as needed
+    protected $fillable = ['user_id', 'board_id', 'score', 'full_score']; // Adjust fields as needed
 
     // Define relationships
     public function user()

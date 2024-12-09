@@ -17,7 +17,7 @@ const ProfileContent = ({ name, email, password }) => (
             <p><strong>Email:</strong> {email || "Loading..."}</p>
           </div>
         </div>
-        <div className="row mb-3">
+        <div className="row">
           <div className="col-md-6">
             <p><strong>Password:</strong> {password || "Loading..."}</p>
           </div>
@@ -25,9 +25,7 @@ const ProfileContent = ({ name, email, password }) => (
       </div>
     </div>
 
-    <div className="row">
-      {/* Add more <ProjectProgressCard /> as needed */}
-    </div>
+    
   </div>
 );
 
