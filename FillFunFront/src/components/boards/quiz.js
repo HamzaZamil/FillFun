@@ -5,7 +5,6 @@ import './question.css';
 import confetti from "canvas-confetti";
 import axiosInstance from "../../api/axiosInstance";
 import Swal from "sweetalert2";
-import { useSpring, animated } from 'react-spring';
 
 
 function Quiz() {
@@ -54,10 +53,11 @@ function Quiz() {
       }
 
       const response = await axiosInstance.post(`/board/addToHistory`, {
-        user_id: userId,
-        board_id: board.id,
-        score: score
-      }
+          user_id: userId,
+          board_id: board.id,
+          score: score,
+          full_score: questions.length,
+        }
       );
 
     } catch (error) {

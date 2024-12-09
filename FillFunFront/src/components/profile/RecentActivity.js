@@ -9,7 +9,8 @@ const RecentActivity = ({ gameHistory }) => (
             <ul className="list-group">
               {gameHistory.map((game) => (
                 <li key={game.id} className="list-group-item">
-                  <strong>Game:</strong> {game.board.name} - <strong>Score:</strong> {game.score}
+                  <span><strong>Game:</strong> {game.board.name}</span><br/>
+                  <span><strong>Score:</strong> {game.score} / {game.full_score}</span>
                 </li>
               ))}
             </ul>

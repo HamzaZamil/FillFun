@@ -1,8 +1,6 @@
 import Detail1 from '../../../assets/img/details-1.png'
 import Detail2 from '../../../assets/img/details-2.png'
 import Detail3 from '../../../assets/img/details-3.png'
-import Detail4 from '../../../assets/img/details-4.png'
-
 
 function description() {
 
