@@ -1,5 +1,8 @@
 // src/components/RegisterPage.jsx
 import React, { useState } from 'react';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 import {
   MDBContainer,
   MDBCol,
@@ -16,6 +19,7 @@ const Register = () => {
     password: '',
     password_confirmation: '',
   });
+  const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
   const [serverMessage, setServerMessage] = useState('');
@@ -46,19 +50,37 @@ const Register = () => {
       setErrors(validationErrors);
       return;
     }
+   
 
     try {
-      const response = await axiosInstance.post('/register', formData);
+   const  response = await axiosInstance.post('/register', formData);
       setServerMessage(response.data.message);
+      Swal.fire({
+        icon: "success",
+        title: "Registered",
+        text: serverMessage,
+      }).then(() => {
+        navigate('/login');
+      });
+      
     } catch (error) {
       const serverErrors = error.response?.data?.errors || {};
       setErrors(serverErrors);
       setServerMessage(
         error.response?.data?.message || 'Something went wrong!'
       );
+    
+      // Format server errors for SweetAlert
+      const errorMessages = Object.values(serverErrors).flat().join(' ');
+    
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Register",
+        text: errorMessages || serverMessage,
+      });
     }
+    
   };
-
   return (
     <MDBContainer
       fluid

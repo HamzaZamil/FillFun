@@ -1,31 +1,42 @@
 import React, { useEffect, useRef } from "react";
-import "./bubbles.css"; // Ensure the correct CSS file path
+import "./bubbles.css";
 
 const Bubbles = () => {
-    const bubblesContainer = useRef(null);
+    const containerRef = useRef(null);
+    const maxBubbles = 10; // Limit the number of bubbles
 
     useEffect(() => {
-        const container = bubblesContainer.current;
+        const container = containerRef.current;
 
-        // Create 20 bubbles dynamically
-        for (let i = 0; i < 20; i++) {
-            const bubble = document.createElement("span");
-            const size = Math.random() * 50 + 10; // Random size
+        if (!container) return;
+
+        const createBubble = () => {
+            if (container.childElementCount >= maxBubbles) return; // Check max bubbles
+
+            const bubble = document.createElement("div");
+            bubble.className = "bubble";
+
+            const size = Math.random() * 50 + 50; // Random size between 50px and 100px
             bubble.style.width = `${size}px`;
             bubble.style.height = `${size}px`;
-            bubble.style.left = `${Math.random() * 100}%`; // Random horizontal position
-            bubble.style.animationDuration = `${Math.random() * 10 + 5}s`; // Random speed
-            bubble.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+            bubble.style.left = `${Math.random() * 100}%`; // Spread across the width
+            bubble.style.top = `${Math.random() * 100}%`; // Spread across the height
+            bubble.style.animationDuration = `${Math.random() * 3 + 3}s`; // Duration between 3s and 6s
             container.appendChild(bubble);
-        }
 
-        // Cleanup on unmount
-        return () => {
-            container.innerHTML = "";
+            // Remove bubble after animation
+            bubble.addEventListener("animationend", () => {
+                bubble.remove();
+            });
         };
+
+        // Generate bubbles at intervals
+        const interval = setInterval(createBubble, 1000); // One bubble every 1.5 seconds
+
+        return () => clearInterval(interval);
     }, []);
 
-    return <div className="bubbles" ref={bubblesContainer}></div>;
+    return <div ref={containerRef} className="bubbles-container"></div>;
 };
 
 export default Bubbles;

@@ -205,7 +205,7 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: color-mix(in srgb, var(--nav-color), transparent 20%);
-    font-size: 15px;
+    font-size: 1.2em;
     padding: 0 2px;
     font-family: var(--nav-font);
     font-weight: 400;
@@ -220,7 +220,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 1.2em;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
@@ -265,10 +265,12 @@ h6 {
     border-radius: 4px;
     z-index: 99;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+   
   }
 
   .navmenu .dropdown ul li {
     min-width: 200px;
+  
   }
 
   .navmenu .dropdown ul a {
@@ -470,7 +472,7 @@ h6 {
 }
 
 .footer .footer-about p {
-  font-size: 14px;
+  font-size: 1.4em;
   font-family: var(--heading-font);
 }
 
@@ -482,7 +484,7 @@ h6 {
   height: 40px;
   border-radius: 50%;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
+  font-size: 1.6em;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-right: 10px;
   transition: 0.3s;
@@ -494,10 +496,11 @@ h6 {
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: 1.6em;
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+
 }
 
 .footer .footer-links {
@@ -520,6 +523,7 @@ h6 {
   padding: 10px 0;
   display: flex;
   align-items: center;
+  font-size: 1.2em;
 }
 
 .footer .footer-links ul li:first-child {
@@ -1095,7 +1099,7 @@ section,
 }
 
 .features .features-item i {
-  font-size: 32px;
+  font-size: 1,2em;
   padding-right: 10px;
   line-height: 0;
 }

@@ -7,6 +7,8 @@ function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [board, setBoard] = useState([]);
+
 
   useEffect(() => {
     const userId = localStorage.getItem("user_id");
@@ -18,6 +20,7 @@ function Wishlist() {
       fetchWishlist();
     }
   }, []);
+
 
   const fetchWishlist = async () => {
     try {
@@ -37,10 +40,19 @@ function Wishlist() {
         params: { user_id: userId },
       });
 
-      const wishlistData = response.data.boards.map((item) => item.board);
+      // Extract board IDs from the response
+      const boardIds = response.data.boards.map((item) => item.board_id);
+
+      // Fetch boards from JSON file
+      const jsonResponse = await fetch('/data/trivia_boards.json');
+      const jsonBoards = await jsonResponse.json();
+
+      // Filter boards by IDs
+      const wishlistData = jsonBoards.filter((board) =>
+        boardIds.includes(board.id)
+      );
 
       setWishlist(wishlistData);
-      console.log("Wishlist fetched:", wishlistData);
       setIsLoggedIn(true);
     } catch (error) {
       Swal.fire({
@@ -53,6 +65,7 @@ function Wishlist() {
       setLoading(false);
     }
   };
+
 
   if (loading) {
     return (

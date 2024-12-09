@@ -52,23 +52,26 @@ function Question({ question, setScore, lock, setlock }) {
   };
 
   return (
-    <div className="funky-container">
-      <div className="funky-card">
-        <div className="funky-question">{question.question}</div>
-        <div className="funky-options">
-          {answers.map((answer, index) => (
-            <div
-              key={index}
-              className="funky-option"
-              onClick={(e) => checkAnswer(e, answer)}
-              ref={optionArr[index]}
-            >
-              {answer}
-            </div>
-          ))}
+    <>
+      <div className="funky-container">
+        <div className="funky-card">
+          <div className="funky-question">{question.question}</div>
+          <div className="funky-options">
+            {answers.map((answer, index) => (
+              <div
+                key={index}
+                className="funky-option"
+                onClick={(e) => checkAnswer(e, answer)}
+                ref={optionArr[index]}
+              >
+                {answer}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+    </>
   );
 }
 
