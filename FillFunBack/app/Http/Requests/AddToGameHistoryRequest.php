@@ -18,6 +18,7 @@ class AddToGameHistoryRequest extends FormRequest
             'user_id' => 'required|exists:users,id',
             'board_id' => 'required|exists:boards,id',
             'score' => 'required|integer',
+            'full_score' => 'required|integer',
         ];
     }
 
@@ -30,6 +31,8 @@ class AddToGameHistoryRequest extends FormRequest
             'board_id.exists' => 'The selected board does not exist.',
             'score.required' => 'The score is required.',
             'score.integer' => 'The score must be an integer.',
+            'full_score.required' => 'The full_score is required.',
+            'full_score.integer' => 'The full_score must be an integer.',
         ];
     }
 }
