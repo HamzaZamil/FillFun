@@ -47,7 +47,7 @@
     },
     {
         "id": 2,
-        "category": "Entertainment: Music",
+        "category": "Entertainment",
         "name": "Music Maestro",
         "description": "Dive into the rhythm of melodies and beats! A perfect challenge for music enthusiasts.",
         "number_of_questions": 8,
@@ -145,7 +145,7 @@
     },
     {
         "id": 3,
-        "category": "Celebrities",
+        "category": "Entertainment",
         "name": "Star Gossip",
         "description": "How well do you know the world of fame and glamour? Take this quiz to find out!",
         "number_of_questions": 1,
@@ -225,7 +225,7 @@
     },
     {
         "id": 5,
-        "category": "Entertainment: Video Games",
+        "category": "Entertainment",
         "name": "Pixel Perfect",
         "description": "Level up your trivia game! A perfect challenge for gaming legends.",
         "number_of_questions": 9,
@@ -343,7 +343,7 @@
     },
     {
         "id": 6,
-        "category": "Science: Computers",
+        "category": "Science",
         "name": "Tech Titans",
         "description": "Crack the code! Ideal for computer enthusiasts and future tech moguls.",
         "number_of_questions": 4,
@@ -431,7 +431,7 @@
     },
     {
         "id": 8,
-        "category": "Entertainment: Film",
+        "category": "Entertainment",
         "name": "Cinema Buff",
         "description": "Grab some popcorn and test your film trivia knowledge!",
         "number_of_questions": 3,
@@ -475,7 +475,7 @@
     },
     {
         "id": 9,
-        "category": "Entertainment: Comics",
+        "category": "Entertainment",
         "name": "Comic Crusader",
         "description": "Unleash your inner hero and conquer this comic-themed trivia!",
         "number_of_questions": 1,
@@ -497,7 +497,7 @@
     },
     {
         "id": 10,
-        "category": "Science & Nature",
+        "category": "Science",
         "name": "Nature Nerd",
         "description": "Explore the wonders of science and the beauty of nature.",
         "number_of_questions": 3,
@@ -565,7 +565,7 @@
     },
     {
         "id": 12,
-        "category": "Entertainment: Cartoon & Animations",
+        "category": "Entertainment",
         "name": "Animated Antics",
         "description": "From classic cartoons to modern animations, see how much you know!",
         "number_of_questions": 1,
@@ -585,7 +585,7 @@
     },
     {
         "id": 13,
-        "category": "Entertainment: Television",
+        "category": "Entertainment",
         "name": "TV Buff",
         "description": "Binge-watched every series? Prove it with this television trivia.",
         "number_of_questions": 7,
@@ -675,7 +675,7 @@
     },
     {
         "id": 14,
-        "category": "Entertainment: Japanese Anime and Manga",
+        "category": "Entertainment",
         "name": "Otaku Oracle",
         "description": "Dive into the world of anime and manga with this specialized quiz.",
         "number_of_questions": 4,
@@ -697,7 +697,7 @@
     },
     {
         "id": 15,
-        "category": "Mythology",
+        "category": "Science",
         "name": "Myth Master",
         "description": "From Greek gods to Norse legends, test your mythological knowledge.",
         "number_of_questions": 3,
@@ -795,7 +795,7 @@
     },
     {
         "id": 18,
-        "category": "Entertainment: Books",
+        "category": "Entertainment",
         "name": "Bookworm Bonanza",
         "description": "Test your knowledge of literature, from classics to modern bestsellers.",
         "number_of_questions": 1,
@@ -817,7 +817,7 @@
     },
     {
         "id": 19,
-        "category": "Science: Gadgets",
+        "category": "Science",
         "name": "Gadget Guru",
         "description": "Explore the latest and greatest in the world of science and gadgets.",
         "number_of_questions": 1,

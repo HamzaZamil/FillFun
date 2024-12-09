@@ -99,7 +99,7 @@ function Navbar() {
                         </li>
                         <li className={`dropdown ${isDropdownOpen ? "show" : ""}`}>
                             <a href="#" onClick={toggleDropdown}>
-                                <i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i>
+                                <i className={isLoggedIn ? "bi bi-person" : "bi bi-box-arrow-right"} style={{ fontSize: "1.5rem" }}></i>
                             </a>
                             {isDropdownOpen && (
                                 <ul className="dropdown-menu">

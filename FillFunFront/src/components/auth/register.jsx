@@ -63,7 +63,7 @@ const Register = () => {
     <MDBContainer
       fluid
       className="d-flex align-items-center justify-content-center vh-100"
-      style={{ maxWidth: '900px', margin: 'auto' }}
+      style={{ maxWidth: '900px', marginTop: '100px' }}
     >
       <MDBRow className="w-100">
         <MDBCol md="6" className="d-none d-md-block">
@@ -77,13 +77,13 @@ const Register = () => {
 
         <MDBCol
           md="6"
-          className="d-flex flex-column align-items-center justify-content-center p-4"
+          className="d-flex flex-column align-items-center justify-content-center p-8"
         >
           <form onSubmit={handleSubmit} className="w-100">
             {serverMessage && (
               <p className="text-center text-danger">{serverMessage}</p>
             )}
-            <h2 className="mb-4 text-center">Register</h2>
+            <h2 className="mb-4 text-center mt-7">Register</h2>
 
             <MDBInput
               wrapperClass="mb-3"
@@ -146,9 +146,10 @@ const Register = () => {
               </button>
               <p className="small mt-3">
                 Already have an account?{' '}
-                <Link to="/login" className="link-danger">
-                  Login
-                </Link>
+                <Link to="/login" style={{ textDecoration: "none" }}>
+  Login
+</Link>
+
               </p>
             </div>
           </form>
