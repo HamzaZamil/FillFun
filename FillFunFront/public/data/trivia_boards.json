@@ -137,7 +137,7 @@
         "incorrect_answers": ["China", "South Korea", "Thailand"]
       }
     ],
-    "image": "https://example.com/country-connoisseur.jpg"
+    "image": "https://m.media-amazon.com/images/I/71Y6SyIgd6L.jpg"
   },
   {
     "id": 5,
@@ -171,7 +171,7 @@
         "incorrect_answers": ["Africa", "North America", "Asia"]
       }
     ],
-    "image": "https://example.com/continent-craze.jpg"
+    "image": ""
   },
   {
     "id": 6,

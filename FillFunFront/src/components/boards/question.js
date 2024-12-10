@@ -20,7 +20,6 @@ function Question({ question, setScore, lock, setlock }) {
     ]);
     setAnswers(shuffledAnswers);
 
-    // Clear any previous classes for correct or wrong answers
     const listItems = document.querySelectorAll(".funky-option");
     listItems.forEach((item) => {
       item.classList.remove(
@@ -31,7 +30,6 @@ function Question({ question, setScore, lock, setlock }) {
       );
     });
 
-    // Unlock the question for the user to answer
     setlock(false);
   }, [question, setlock]);
 

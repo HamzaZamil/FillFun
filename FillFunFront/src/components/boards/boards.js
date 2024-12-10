@@ -1,10 +1,9 @@
-import { useEffect, useState, } from "react";
+import { useEffect, useState } from "react";
 import Filtering from './filtering';
 import Card from './card';
 import Search from './search';
 import { useLocation } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
-
 
 function Boards() {
     const [boards, setBoards] = useState([]);
@@ -12,6 +11,7 @@ function Boards() {
     const [categories, setCategories] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const location = useLocation();
+
     useEffect(() => {
         fetch('/data/trivia_boards.json')
             .then(response => response.json())
@@ -33,7 +33,6 @@ function Boards() {
         const filtered = boards.filter(board => {
             const matchesCategory = filters.categories.length === 0 || filters.categories.includes(board.category);
             const matchesSearch = board.name.toLowerCase().includes(searchQuery.toLowerCase());
-
             return matchesCategory && matchesSearch;
         });
         setFilteredBoards(filtered);
@@ -78,21 +77,22 @@ function Boards() {
                     <Search handleSearch={handleSearch} />
                     <div className="row">
                         <div
-                            className="col-md-3"
+                            className="col-12 col-lg-3 mb-4"
                             style={{
                                 position: 'sticky',
-                                top: '100px', 
+                                top: '100px',
                                 zIndex: '10',
                                 background: '#fff',
-                                height: 'fit-content', 
-                            }}                        >
+                                height: 'fit-content',
+                            }}
+                        >
                             <Filtering onFilterChange={handleFilterChange} categories={categories} />
                         </div>
 
-                        <div className="col-md-9">
+                        <div className="col-12 col-lg-9">
                             <div className="row">
                                 {filteredBoards.map((board, index) => (
-                                    <div key={index} className="col-md-4 mb-4">
+                                    <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
                                         <Card board={board} />
                                     </div>
                                 ))}
@@ -100,7 +100,6 @@ function Boards() {
                         </div>
                     </div>
                 </div>
-
             </section>
         </>
     );

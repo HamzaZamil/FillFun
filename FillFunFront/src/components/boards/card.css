@@ -42,3 +42,46 @@
 .board-card .btn-primary {
     margin-top: auto;
 }
+.board-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 18rem; /* Fixed max width for large screens */
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  
+  .card-img-top {
+    width: 100%; /* Make sure the image takes up full width */
+    height: 200px; /* Fixed height for all screen sizes */
+    object-fit: cover; /* Ensures the image is properly resized */
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) { /* Tablet view */
+    .board-card {
+      max-width: 16rem; /* Slightly smaller card on tablet */
+    }
+  }
+  
+  @media (max-width: 576px) { /* Mobile view */
+    .board-card {
+      max-width: 100%; /* Full width for mobile screens */
+      margin-bottom: 20px;
+    }
+    
+    .card-body {
+      padding: 10px; /* Smaller padding on mobile */
+    }
+  
+    .card-img-top {
+      height: 150px; /* Smaller image on mobile */
+    }
+  
+    .card-title {
+      font-size: 1rem; /* Adjust title size on mobile */
+    }
+  }
+  

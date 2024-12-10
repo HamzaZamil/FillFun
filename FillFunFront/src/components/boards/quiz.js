@@ -9,6 +9,7 @@ import Bubbles from '../../bubbles/bubbles';
 import Perfect from '../../assets/perfect.gif';
 import Better from '../../assets/better.gif';
 import Bad from '../../assets/bad.gif';
+import { useCallback } from "react";
 
 
 function Quiz() {
@@ -42,7 +43,7 @@ function Quiz() {
   }, [result, score, questions.length]);
 
 
-  const saveResult = async () => {
+  const saveResult = useCallback(async () => {
     try {
       const userId = localStorage.getItem("user_id");
 
@@ -52,28 +53,37 @@ function Quiz() {
           title: "Please Log in",
           text: "Please log in to continue.",
         });
-
         return;
       }
 
-      const response = await axiosInstance.post(`/board/addToHistory`, {
-          user_id: userId,
-          board_id: board.id,
-          score: score,
-          full_score: questions.length,
-        }
-      );
-
+      await axiosInstance.post(`/board/addToHistory`, {
+        user_id: userId,
+        board_id: board.id,
+        score: score,
+        full_score: questions.length,
+      });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text:
-          error.response?.data?.message || "Failed to add history board.",
+        text: error.response?.data?.message || "Failed to add history board.",
       });
     }
-  };
+  }, [board.id, questions.length, score]);
 
+  useEffect(() => {
+    if (result) {
+      saveResult();
+    }
+
+    if (result && score === questions.length) {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+    }
+  }, [result, score, questions.length, saveResult]);
 
 
 
