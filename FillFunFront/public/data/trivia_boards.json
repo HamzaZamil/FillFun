@@ -65,7 +65,7 @@
         "incorrect_answers": ["Berlin", "Rome", "Madrid"]
       }
     ],
-    "image": "https://img.freepik.com/premium-photo/cyber-sleuth-unveiling-megacity-secrets_153608-16144.jpg"
+    "image": "https://img.freepik.com/free-vector/rainy-weather-night-city-streets-vector_1441-3384.jpg"
   },
   {
     "id": 3,
@@ -103,7 +103,7 @@
         "incorrect_answers": ["K2", "Kangchenjunga", "Lhotse"]
       }
     ],
-    "image": "https://listverse.com/wp-content/uploads/2015/04/10-sphinx-e1429812419959.jpg"
+    "image": "https://cdn.langeek.co/photo/23585/original/?type=jpeg"
   },
   {
     "id": 4,
@@ -137,7 +137,7 @@
         "incorrect_answers": ["China", "South Korea", "Thailand"]
       }
     ],
-    "image": "https://m.media-amazon.com/images/I/71Y6SyIgd6L.jpg"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYvUibpko2NRp2hkQ_bAMHvvEmzfz02-_UyA&s"
   },
   {
     "id": 5,
@@ -171,7 +171,7 @@
         "incorrect_answers": ["Africa", "North America", "Asia"]
       }
     ],
-    "image": ""
+    "image": "https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/continent-map_ver_1.jpg"
   },
   {
     "id": 6,
@@ -205,7 +205,7 @@
         "incorrect_answers": ["Maldives", "Indonesia", "Thailand"]
       }
     ],
-    "image": "https://example.com/island-intrigue.jpg"
+    "image": "https://img.freepik.com/free-vector/tropical-volcano-island-sea-cartoon-landscape_107791-21011.jpg"
   },
   {
     "id": 7,
@@ -313,7 +313,7 @@
         "incorrect_answers": ["The Beatles", "The Rolling Stones", "The Doors"]
       }
     ],
-    "image": "https://example.com/rock-legends.jpg"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE7V-TyXkduADeKCz7b9hRrxsEdUDKCIcJ1g&s"
   },
   {
     "id": 9,
@@ -347,7 +347,7 @@
         "incorrect_answers": ["Adele", "Beyoncé", "Ariana Grande"]
       }
     ],
-    "image": "https://example.com/pop-icons.jpg"
+    "image": "https://cdn.dribbble.com/users/348324/screenshots/1755160/music.gif"
   },
   {
     "id": 10,
@@ -393,7 +393,7 @@
         ]
       }
     ],
-    "image": "https://example.com/classical-composers.jpg"
+    "image": "https://media.gettyimages.com/id/165745236/vector/conductor-cartoon.jpg?s=612x612&w=gi&k=20&c=v48HmMrQDGLZf-vzLmYFe2bREWl8GdgfnM76yxEKDX4="
   },
   {
     "id": 11,
@@ -427,7 +427,7 @@
         "incorrect_answers": ["Suge Knight", "Tupac Shakur", "Ice Cube"]
       }
     ],
-    "image": "https://example.com/hip-hop-heroes.jpg"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqSarc0Z3V_XqocCLIUuUDUk-oiDdDx4xUwg&s"
   },
   {
     "id": 12,
@@ -469,7 +469,7 @@
         "incorrect_answers": ["Duke Ellington", "Bill Evans", "Oscar Peterson"]
       }
     ],
-    "image": "https://example.com/jazz-giants.jpg"
+    "image": "https://c8.alamy.com/comp/KWP1JC/cartoon-illustration-of-jazz-musicians-band-playing-a-concert-KWP1JC.jpg"
   },
   {
     "id": 13,
@@ -567,7 +567,7 @@
         "incorrect_answers": ["Paper", "Parchment", "Clay tablets"]
       }
     ],
-    "image": "https://example.com/ancient-civilizations.jpg"
+    "image": "https://www.shutterstock.com/image-vector/vector-illustration-ancient-egyptian-boy-600nw-2351794625.jpg"
   },
   {
     "id": 16,
@@ -609,7 +609,7 @@
         ]
       }
     ],
-    "image": "https://example.com/world-war-chronicles.jpg"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAdP0zZP5moqRBeE8Y_g33Ii_SA4fscIpudg&s"
   },
   {
     "id": 17,
@@ -647,7 +647,7 @@
         ]
       }
     ],
-    "image": "https://example.com/revolutionary-moments.jpg"
+    "image": "https://preview.redd.it/1980s-anime-about-the-bolshevik-revolution-v0-088ucthcqbsa1.jpg?width=1026&format=pjpg&auto=webp&s=0ac4ea4926421c3efdd1ff78027fc64993350261"
   },
   {
     "id": 18,
@@ -681,7 +681,7 @@
         "incorrect_answers": ["Rome", "Athens", "Alexandria"]
       }
     ],
-    "image": "https://example.com/medieval-europe.jpg"
+    "image": "https://img.freepik.com/premium-vector/medieval-knight-full-armor-laydy-dragon-others-fairytale-medieval-castle-background-cartoon-middle-ages-historic-period-medieval-kingdom-characters-standing-costumes_87946-3621.jpg"
   },
   {
     "id": 19,
@@ -730,32 +730,6 @@
     "image": "https://media.licdn.com/dms/image/v2/C4E0BAQGViODTU3fn-w/company-logo_200_200/company-logo_200_200/0/1649162499397/team_tech_titans_logo?e=2147483647&v=beta&t=1NZhpNSasNsvkkVvvpVFh66C70AvcH98k9doVYrEI30"
   },
   {
-    "id": 44,
-    "category": "Sports",
-    "name": "Sporting Legends",
-    "description": "Gear up for a challenge! Perfect for sports fans and trivia athletes.",
-    "number_of_questions": 2,
-    "questions": [
-      {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Sports",
-        "question": "Which of the following sports is not part of the triathlon?",
-        "correct_answer": "Horse-Riding",
-        "incorrect_answers": ["Cycling", "Swimming", "Running"]
-      },
-      {
-        "type": "boolean",
-        "difficulty": "medium",
-        "category": "Sports",
-        "question": "Wilt Chamberlain scored his infamous 100-point-game against the New York Knicks in 1962.",
-        "correct_answer": "True",
-        "incorrect_answers": ["False"]
-      }
-    ],
-    "image": "https://img.freepik.com/premium-vector/happy-children-playing-sports-outdoors-cartoon-style_657438-34747.jpg"
-  },
-  {
     "id": 20,
     "category": "Sports",
     "name": "Olympic Glory",
@@ -787,7 +761,7 @@
         "incorrect_answers": ["Usain Bolt", "Carl Lewis", "Mark Spitz"]
       }
     ],
-    "image": "https://example.com/olympic-glory.jpg"
+    "image": "https://www.onlinesportmanagers.com/gfx/thumbs/olympic.png"
   },
   {
     "id": 21,
@@ -825,7 +799,7 @@
         "incorrect_answers": ["Barcelona", "AC Milan", "Liverpool"]
       }
     ],
-    "image": "https://example.com/soccer-stars.jpg"
+    "image": "https://static.vecteezy.com/system/resources/previews/005/112/609/non_2x/cartoon-little-boy-playing-soccer-free-vector.jpg"
   },
   {
     "id": 22,
@@ -863,7 +837,7 @@
         "incorrect_answers": ["LeBron James", "James Harden", "Kevin Durant"]
       }
     ],
-    "image": "https://example.com/basketball-greats.jpg"
+    "image": "https://media.gettyimages.com/id/148771690/vector/cartoon-basketball-hoop.jpg?s=612x612&w=gi&k=20&c=7mQcNryfT3A8dNJKEUIWbqThKJDLAqfos9x_zkh9vgI="
   },
   {
     "id": 23,
@@ -901,7 +875,7 @@
         "incorrect_answers": ["Clay", "Hard", "Carpet"]
       }
     ],
-    "image": "https://example.com/tennis-titans.jpg"
+    "image": "https://media.istockphoto.com/id/537620970/vector/tennis-ball-holding-a-tennis-ball-and-racket.jpg?s=612x612&w=0&k=20&c=lQVK3RVKtldQaG-_LsAI_jh7w6RhsWEe754r4U5i4sg="
   },
   {
     "id": 24,
@@ -1055,7 +1029,7 @@
         "incorrect_answers": ["Aston Martin", "Bentley", "Rolls-Royce"]
       }
     ],
-    "image": "https://example.com/classic-cars.jpg"
+    "image": "https://i.pinimg.com/736x/ce/2b/e0/ce2be0abbe07141b521adc96ceb45c4e.jpg"
   },
   {
     "id": 29,
@@ -1093,7 +1067,7 @@
         "incorrect_answers": ["Red", "Blue", "Green"]
       }
     ],
-    "image": "https://example.com/supercars.jpg"
+    "image": "https://static.vecteezy.com/system/resources/previews/035/929/132/non_2x/ai-generated-supercar-hypercar-racing-car-cartoon-free-png.png"
   },
   {
     "id": 30,
@@ -1305,7 +1279,7 @@
         ]
       }
     ],
-    "image": "https://example.com/masterpieces_image.jpg"
+    "image": "https://aiartshop.com/cdn/shop/files/animated-mona-lisa-a-modern-twist-on-timeless-masterpiece-ai-artwork-997.webp?v=1717157085"
   },
   {
     "id": 36,
@@ -1367,7 +1341,7 @@
         "incorrect_answers": ["Gustav Klimt", "Paul Gauguin", "Henri Rousseau"]
       }
     ],
-    "image": "https://example.com/modern_art_image.jpg"
+    "image": "https://luxurywallart.com/cdn/shop/collections/contemporary-art-621863_1600x.jpg?v=1708368692"
   },
   {
     "id": 37,
@@ -1421,7 +1395,7 @@
         "incorrect_answers": ["Leonardo da Vinci", "Raphael", "Titian"]
       }
     ],
-    "image": "https://example.com/renaissance_art_image.jpg"
+    "image": "https://cdn.britannica.com/32/10132-050-E88FFD01/Adoration-of-the-Magi-Albrecht-Durer-Uffizi.jpg"
   },
   {
     "id": 38,
@@ -1557,7 +1531,7 @@
         "incorrect_answers": ["1905", "1915", "1920"]
       }
     ],
-    "image": "https://example.com/fact_finder_image.jpg"
+    "image": "https://mygolfmk7.com/wp-content/uploads/2021/08/detective.jpg"
   },
   {
     "id": 42,
@@ -1607,7 +1581,7 @@
         "incorrect_answers": ["Christopher Marlowe", "Ben Jonson", "Thomas Kyd"]
       }
     ],
-    "image": "https://example.com/trivia_master_image.jpg"
+    "image": "https://www.shutterstock.com/image-photo/generate-quiz-night-poster-cartoon-260nw-2471934001.jpg"
   },
   {
     "id": 43,
@@ -1661,7 +1635,7 @@
         "incorrect_answers": ["Venus", "Earth", "Mars"]
       }
     ],
-    "image": "https://example.com/knowledge_ninja_image.jpg"
+    "image": "https://img.freepik.com/premium-photo/cartoon-ninja-with-staff-preparing-fierce-battle-with-determined-expression_994764-193625.jpg"
   },
   {
     "id": 44,
@@ -1711,6 +1685,6 @@
         "incorrect_answers": ["Michelangelo", "Raphael", "Donatello"]
       }
     ],
-    "image": "https://example.com/quiz_champ_image.jpg"
+    "image": "https://media.licdn.com/dms/image/v2/D4D12AQE7t_SqpqTyCQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721183915923?e=2147483647&v=beta&t=DgE_2c3N2BQUKh3AEProewrCH8hJSoGt2j6Q-QJa2L0"
   }
 ]
