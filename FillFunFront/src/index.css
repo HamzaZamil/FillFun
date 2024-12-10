@@ -1399,3 +1399,20 @@ section,
     min-width: auto;
   }
 }
+/* Custom styles for better spacing on mobile */
+@media (max-width: 576px) {
+  .filtering {
+      margin-bottom: 20px;
+  }
+}
+
+/* Adjusting headings for mobile */
+@media (max-width: 576px) {
+  .page-title h1 {
+      font-size: 1.5rem;
+  }
+
+  .page-title p {
+      font-size: 0.875rem;
+  }
+}

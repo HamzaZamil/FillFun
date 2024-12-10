@@ -7,8 +7,6 @@ function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [board, setBoard] = useState([]);
-
 
   useEffect(() => {
     const userId = localStorage.getItem("user_id");
@@ -17,55 +15,52 @@ function Wishlist() {
       setLoading(false);
     } else {
       setIsLoggedIn(true);
-      fetchWishlist();
+      fetchWishlist(userId);
     }
   }, []);
 
-
-  const fetchWishlist = async () => {
+  const fetchWishlist = async (userId) => {
     try {
-      const userId = localStorage.getItem("user_id");
-
-      if (!userId) {
-        Swal.fire({
-          icon: "error",
-          title: "Please Log in",
-          text: "Please log in to view your wishlist.",
-        });
-        setIsLoggedIn(false);
-        return;
-      }
-
       const response = await axiosInstance.get(`/wishlist`, {
         params: { user_id: userId },
       });
 
-      // Extract board IDs from the response
       const boardIds = response.data.boards.map((item) => item.board_id);
 
-      // Fetch boards from JSON file
-      const jsonResponse = await fetch('/data/trivia_boards.json');
-      const jsonBoards = await jsonResponse.json();
+      const jsonResponse = await fetch("/data/trivia_boards.json");
+      if (!jsonResponse.ok) {
+        throw new Error("Failed to fetch trivia boards data.");
+      }
 
-      // Filter boards by IDs
+      const jsonBoards = await jsonResponse.json();
       const wishlistData = jsonBoards.filter((board) =>
         boardIds.includes(board.id)
       );
 
-      setWishlist(wishlistData);
-      setIsLoggedIn(true);
+      const wishlistWithFavoriteStatus = wishlistData.map((board) => {
+        const isFavorite = boardIds.includes(board.id); 
+        return { ...board, isFavorite };
+      });
+
+      setWishlist(wishlistWithFavoriteStatus);
     } catch (error) {
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "Failed to fetch wishlist items.";
       Swal.fire({
         icon: "error",
         title: "Error",
-        text:
-          error.response?.data?.message || "Failed to fetch wishlist items.",
+        text: errorMessage,
       });
     } finally {
       setLoading(false);
     }
   };
 
+  const removeFromWishlist = (boardId) => {
+    setWishlist((prevWishlist) => prevWishlist.filter((board) => board.id !== boardId));
+  };
 
   if (loading) {
     return (
@@ -107,7 +102,14 @@ function Wishlist() {
               style={{ minHeight: "60vh", gap: "30px" }}
             >
               {wishlist.length > 0 ? (
-                wishlist.map((board) => <Card key={board.id} board={board} />)
+                wishlist.map((board) => (
+                  <Card
+                    key={board.id}
+                    board={board}
+                    isFavoriteInitial={board.isFavorite}
+                    onRemoveFromWishlist={removeFromWishlist} 
+                  />
+                ))
               ) : (
                 <p>No items in your wishlist yet!</p>
               )}
@@ -117,7 +119,7 @@ function Wishlist() {
               className="d-flex justify-content-center align-items-center"
               style={{ height: "60vh" }}
             >
-              <p>You must log in to see your wishlist boards.</p>
+              <p>You must log in to view your wishlist boards.</p>
             </div>
           )}
         </div>

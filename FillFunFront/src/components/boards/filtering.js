@@ -23,20 +23,25 @@ function Filtering({ onFilterChange, categories }) {
 
     return (
         <div className="filtering">
-            <div>
+            <div className="filter-container">
                 <h4>Categories</h4>
-                {categories.map((category) => (
-                    <div key={category}>
-                        <input
-                            type="checkbox"
-                            id={`category-${category}`}
-                            value={category}
-                            checked={selectedFilters.categories.includes(category)}
-                            onChange={() => handleCheckboxChange("categories", category)}
-                        />
-                        <label htmlFor={`category-${category}`} className="mx-2">{category}</label>
-                    </div>
-                ))}
+                <div className="category-list">
+                    {categories.map((category) => (
+                        <div key={category} className="form-check">
+                            <input
+                                type="checkbox"
+                                id={`category-${category}`}
+                                value={category}
+                                checked={selectedFilters.categories.includes(category)}
+                                onChange={() => handleCheckboxChange("categories", category)}
+                                className="form-check-input"
+                            />
+                            <label htmlFor={`category-${category}`} className="form-check-label">
+                                {category}
+                            </label>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
