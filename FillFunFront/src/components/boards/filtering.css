@@ -42,6 +42,15 @@
     .form-check {
       width: 100%; /* 1 column on mobile */
     }
+
+    @media (max-width: 1024px) {
+      .category-list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+
+    }
   }
   
   

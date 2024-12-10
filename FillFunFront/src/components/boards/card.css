@@ -60,9 +60,9 @@
   }
   
   /* Media Queries for Responsiveness */
-  @media (max-width: 768px) { /* Tablet view */
+  @media (max-width: 1024px) { /* Tablet view */
     .board-card {
-      max-width: 16rem; /* Slightly smaller card on tablet */
+      max-width: 13rem; /* Slightly smaller card on tablet */
     }
   }
   
