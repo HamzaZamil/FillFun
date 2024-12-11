@@ -730,32 +730,6 @@
     "image": "https://media.licdn.com/dms/image/v2/C4E0BAQGViODTU3fn-w/company-logo_200_200/company-logo_200_200/0/1649162499397/team_tech_titans_logo?e=2147483647&v=beta&t=1NZhpNSasNsvkkVvvpVFh66C70AvcH98k9doVYrEI30"
   },
   {
-    "id": 44,
-    "category": "Sports",
-    "name": "Sporting Legends",
-    "description": "Gear up for a challenge! Perfect for sports fans and trivia athletes.",
-    "number_of_questions": 2,
-    "questions": [
-      {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Sports",
-        "question": "Which of the following sports is not part of the triathlon?",
-        "correct_answer": "Horse-Riding",
-        "incorrect_answers": ["Cycling", "Swimming", "Running"]
-      },
-      {
-        "type": "boolean",
-        "difficulty": "medium",
-        "category": "Sports",
-        "question": "Wilt Chamberlain scored his infamous 100-point-game against the New York Knicks in 1962.",
-        "correct_answer": "True",
-        "incorrect_answers": ["False"]
-      }
-    ],
-    "image": "https://img.freepik.com/premium-vector/happy-children-playing-sports-outdoors-cartoon-style_657438-34747.jpg"
-  },
-  {
     "id": 20,
     "category": "Sports",
     "name": "Olympic Glory",
